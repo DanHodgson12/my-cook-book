@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CookBook</title>
+</head>
+<body>
+    {% for recipe in recipes %}
+        <h4>{{ recipe.recipe_name|title }}</h4>
+        {{ recipe.recipe_desc|capitalize }}<br>
+        {{ recipe.meal_type|capitalize }}<br>
+        <h5>Ingredients:</h5>
+        <ul>
+            {% for ingredient in recipe.ingredients %}
+                <li>{{ ingredient.quantity }}{{ ingredient.unit }} {{ ingredient.name|title }}</li>
+            {% endfor %}
+        </ul>
+        <h5>Method:</h5>
+        <ol>
+            {% for step in recipe.method %}
+                <li>{{ step.step_desc|capitalize }}</li>
+            {% endfor %}
+        </ol>
+    {% endfor %}
+</body>
+</html>
