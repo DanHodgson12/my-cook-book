@@ -1,42 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for recipe in recipes %}
-        <h4>{{ recipe.recipe_name|title }}</h4>
-        {{ recipe.recipe_desc|capitalize }}<br>
-        {{ recipe.meal_type|capitalize }}<br>
-        <h5>Ingredients:</h5>
-        <ul>
-            {% for ingredient in recipe.ingredients %}
-                <li>{{ ingredient.quantity }}{{ ingredient.unit }} {{ ingredient.name|title }}</li>
-            {% endfor %}
-        </ul>
-        <h5>Method:</h5>
-        <ol>
-            {% for step in recipe.method %}
-                <li>{{ step.step_desc|capitalize }}</li>
-            {% endfor %}
-        </ol>
-    {% endfor %}
 
     <ul class="collapsible">
-        <li>
-            <div class="collapsible-header white-text teal lighten-1 text-shadow">
-                <i class="fa-solid fa-utensils prefix"></i>
-            </div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header white-text teal lighten-1 text-shadow">
-                <i class="fa-solid fa-utensils prefix"></i>
-            </div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header white-text teal lighten-1 text-shadow">
-                <i class="fa-solid fa-utensils prefix"></i>
-            </div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+        {% for recipe in recipes %}
+            <li>
+                <div class="collapsible-header white-text teal lighten-1 text-shadow">
+                    <i class="fa-solid fa-caret-down prefix"></i>
+                    <strong>{{ recipe.recipe_name|title }}</strong>
+                </div>
+                <div class="collapsible-body">
+                    <p>{{ recipe.recipe_desc|capitalize }}</p>
+                    <ul>
+                        <li><strong>Meal Type: </strong>{{ recipe.meal_type|title }}</li>
+                        <li>
+                            <strong>Ready In: </strong>
+                            {% for item in recipe.ready_in %}
+                                {{ item.time }} {{ item.measure }}
+                            {% endfor %}
+                        </li>
+                        <li><strong>Difficulty: </strong>{{ recipe.difficulty|capitalize }}</li>
+                        <li><strong>Created By: </strong>Chef {{ recipe.created_by }}</li>
+                    </ul>
+                </div>
+            </li>
+        {% endfor %}
     </ul>
 
 {% endblock %}
