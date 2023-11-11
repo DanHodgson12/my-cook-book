@@ -23,26 +23,22 @@
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <select multiple>
-                        <option value="" disabled selected></option>
-                        <option value="1">Breakfast</option>
-                        <option value="2">Lunch</option>
-                        <option value="3">Dinner</option>
-                        <option value="4">Dessert</option>
-                        <option value="5">Snack</option>
-                        <option value="6">General</option>
+                    <select id="meal_type" name="meal_type" class="validate" required multiple>
+                        {% for i in meal_types %}
+                            <option value="{{ i.meal_type }}">{{ i.meal_type|capitalize }}</option>
+                        {% endfor %}
                     </select>
-                    <label>Meal Type</label>
+                    <label for="meal_type">Meal Type</label>
                 </div>
                 <div class="input-field col s6">
-                    <select>
+                    <select id="difficulty" name="difficulty" class="validate" required>
                         <option value="" disabled selected></option>
                         <option value="1">Beginner</option>
                         <option value="2">Intermediate</option>
                         <option value="3">Advanced</option>
                         <option value="4">Expert</option>
                     </select>
-                    <label>Recipe Difficulty</label>
+                    <label for="difficulty">Recipe Difficulty</label>
                 </div>
             </div>
         </form>

@@ -101,7 +101,8 @@ def sign_out():
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    meal_types = mongo.db.meal_types.find()
+    return render_template("add_recipe.html", meal_types=meal_types)
 
 
 if __name__ == "__main__":
