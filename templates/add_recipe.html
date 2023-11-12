@@ -5,6 +5,7 @@
 
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="">
+            <!-- recipe name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pen prefix"></i>
@@ -13,6 +14,7 @@
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
+            <!-- recipe description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-align-left prefix"></i>
@@ -22,6 +24,7 @@
                 </div>
             </div>
             <div class="row">
+                <!-- meal type -->
                 <div class="input-field col s12 m4">
                     <select id="meal_type" name="meal_type" class="validate" required multiple>
                         {% for i in meal_types %}
@@ -30,6 +33,7 @@
                     </select>
                     <label for="meal_type">Meal Type</label>
                 </div>
+                <!-- recipe difficulty -->
                 <div class="input-field col s12 m4">
                     <select id="difficulty" name="difficulty" class="validate" required>
                         <option value="" disabled selected></option>
@@ -39,6 +43,7 @@
                     </select>
                     <label for="difficulty">Recipe Difficulty</label>
                 </div>
+                <!-- ready in -->
                 <div class="input-field col s6 m2">
                     <input id="ready_hours" name="ready_hours" type="number" class="validate" required placeholder="Hours">
                     <label for="ready_hours">Ready In</label>
@@ -48,30 +53,57 @@
                     <label for="ready_minutes"></label>
                 </div>
             </div>
-            <div class="row" id="ingredients">
+            <!-- ingredients label and add button -->
+            <div class="row">
                 <div class="col s12">
                     <label for="quantity[] unit[] name[]">Ingredients: </label>
-                    <a class="btn-floating waves-effect waves-light teal-text" id="add-ingredient">
+                    <a class="btn-floating waves-effect waves-light" id="add-ingredient">
                         <i class="fa-solid fa-circle-plus"></i>
                     </a>
                 </div>
-                <div class="input-field col s3">
-                    <input name="quantity[]" id="quantity[]" type="number" class="validate" required placeholder="Quantity">
-                </div>
-                <div class="input-field col s3">
-                    <select name="unit[]" id="unit[]" class="validate" required>
-                        <option value="" selected>Unit</option>
-                        <option value="g">Grams</option>
-                        <option value="kg">Kilograms</option>
-                        <option value="ml">Millilitres</option>
-                        <option value="l">Litres</option>
-                        <option value="cup">Cup</option>
-                        <option value="tsp">Teaspoon</option>
-                        <option value="tbsp">Tablespoon</option>
-                    </select>
-                </div>
-                <div class="input-field col s6">
-                    <input name="name[]" id="name[]" type="text" minlength="3" class="validate" required placeholder="Item">
+            </div>
+            <!-- ingredients table -->
+            <div>
+                <div class="row">
+                    <div class="col s12 input-field">
+                        <table id="ingredients-table">
+                            <thead>
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Quantity</th>
+                                    <th>Unit</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input name="name[]" type="text" minlength="3" class="validate" required placeholder="Food">
+                                    </td>
+                                    <td>
+                                        <input name="quantity[]" type="number" class="validate " required placeholder="Quantity">
+                                    </td>
+                                    <td>
+                                        <select name="unit[]" class="validate" required>
+                                            <option value="unit" selected>Unit</option>
+                                            <option value="g">Grams</option>
+                                            <option value="kg">Kilograms</option>
+                                            <option value="ml">Millilitres</option>
+                                            <option value="l">Litres</option>
+                                            <option value="cup">Cup</option>
+                                            <option value="tsp">Teaspoon</option>
+                                            <option value="tbsp">Tablespoon</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <a class="btn-floating waves-effect waves-light" id="delete-ingredient">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </form>
