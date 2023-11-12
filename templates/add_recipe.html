@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m4">
                     <select id="meal_type" name="meal_type" class="validate" required multiple>
                         {% for i in meal_types %}
                             <option value="{{ i.meal_type }}">{{ i.meal_type|capitalize }}</option>
@@ -30,15 +30,27 @@
                     </select>
                     <label for="meal_type">Meal Type</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s12 m4">
                     <select id="difficulty" name="difficulty" class="validate" required>
                         <option value="" disabled selected></option>
-                        <option value="1">Beginner</option>
-                        <option value="2">Intermediate</option>
-                        <option value="3">Advanced</option>
-                        <option value="4">Expert</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
                     </select>
                     <label for="difficulty">Recipe Difficulty</label>
+                </div>
+                <div class="input-field col s6 m2">
+                    <input id="ready_hours" name="ready_hours" type="number" class="validate" required placeholder="Hours">
+                    <label for="ready_hours">Ready In</label>
+                </div>
+                <div class="input-field col s6 m2">
+                    <input id="ready_minutes" name="ready_minutes" type="number" class="validate" required placeholder="Minutes">
+                    <label for="ready_minutes"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    
                 </div>
             </div>
         </form>
