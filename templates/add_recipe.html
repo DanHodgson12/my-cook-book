@@ -106,6 +106,46 @@
                     </div>
                 </div>
             </div>
+
+            <!-- method label and add button -->
+            <div class="row">
+                <div class="col s12">
+                    <label for="">Method: </label>
+                    <a class="btn-floating waves-effect waves-light" id="add-step">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- method table -->
+            <div>
+                <div class="row">
+                    <div class="col s12 input-field">
+                        <table id="method-table">
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Method</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span id="step_number">1</span>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <textarea id="step_desc" name="step_desc" minlength="5" maxlength="300"
+                                        class="validate materialize-textarea" required></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </form>
     </div>
 
