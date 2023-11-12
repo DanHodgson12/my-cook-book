@@ -12,12 +12,7 @@
                     <p>{{ recipe.recipe_desc|capitalize }}</p>
                     <ul>
                         <li><strong>Meal Type: </strong>{{ recipe.meal_type|title }}</li>
-                        <li>
-                            <strong>Ready In: </strong>
-                            {% for item in recipe.ready_in %}
-                                {{ item.time }} {{ item.measure }}
-                            {% endfor %}
-                        </li>
+                        <li><strong>Ready In: </strong>{{ recipe.ready_in }} mins</li>
                         <li><strong>Difficulty: </strong>{{ recipe.difficulty|capitalize }}</li>
                         <li><strong>Created By: </strong>Chef {{ recipe.created_by }}</li>
                     </ul>
