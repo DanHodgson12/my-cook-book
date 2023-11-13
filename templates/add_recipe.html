@@ -26,7 +26,8 @@
             <div class="row">
                 <!-- meal type -->
                 <div class="input-field col s12 m4">
-                    <select id="meal_type" name="meal_type" class="validate" required multiple>
+                    <select id="meal_type" name="meal_type" class="validate" required>
+                        <option value="" disabled selected>e.g. Lunch</option>
                         {% for i in meal_types %}
                             <option value="{{ i.meal_type }}">{{ i.meal_type|capitalize }}</option>
                         {% endfor %}
@@ -35,8 +36,8 @@
                 </div>
                 <!-- recipe difficulty -->
                 <div class="input-field col s12 m4">
-                    <select id="difficulty" name="difficulty" class="validate" required>
-                        <option value="" disabled selected></option>
+                    <select id="difficulty" name="difficulty" class="validate" required placeholder="Beginner">
+                        <option value="" disabled selected>e.g. Beginner</option>
                         <option value="beginner">Beginner</option>
                         <option value="intermediate">Intermediate</option>
                         <option value="advanced">Advanced</option>
