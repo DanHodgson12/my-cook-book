@@ -14,4 +14,17 @@ $(document).ready(function () {
         $(this).closest('tr').remove();
     });
 
+    $('#method-table tbody tr:first #delete-step').hide();
+    $('#add-step').click(function () {
+        let duplicateRow = $('#method-table tbody tr:first').clone();
+        duplicateRow.find('input, select').val('');
+        duplicateRow.find('#delete-step').show();
+        duplicateRow.appendTo('#method-table tbody');
+    });
+    $('#method-table tbody').on('click', '#delete-step', function () {
+        $(this).closest('tr').remove();
+    });
+
+    
+
 });
