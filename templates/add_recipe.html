@@ -71,20 +71,24 @@
                                 <tr>
                                     <th>Food</th>
                                     <th>Quantity</th>
-                                    <th>Unit</th>
+                                    <th>Unit (optional)</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <input name="name[]" type="text" minlength="3" class="validate" required placeholder="Food">
+                                        <input name="name[]" type="text" minlength="3" class="validate"
+                                        required placeholder="(e.g. Chicken Breast, Brown Onion, Garlic Powder, etc)">
                                     </td>
                                     <td>
-                                        <input name="quantity[]" type="number" class="validate " required placeholder="Quantity">
+                                        <input name="quantity[]" type="number" class="validate " required placeholder="(e.g. 2, 500, etc)">
                                     </td>
                                     <td>
-                                        <select name="unit[]" class="validate" required>
+                                        <input name="unit[]" type="text" maxlength="10" class="validate"
+                                            placeholder="(e.g. kg, g, l, ml, cup, tsp, tbsp, etc)">
+
+                                        <!-- <select name="unit[]" class="validate" required>
                                             <option value="unit" selected>Unit</option>
                                             <option value="g">Grams</option>
                                             <option value="kg">Kilograms</option>
@@ -93,7 +97,7 @@
                                             <option value="cup">Cup</option>
                                             <option value="tsp">Teaspoon</option>
                                             <option value="tbsp">Tablespoon</option>
-                                        </select>
+                                        </select> -->
                                     </td>
                                     <td>
                                         <a class="btn-floating waves-effect waves-light" id="delete-ingredient">
