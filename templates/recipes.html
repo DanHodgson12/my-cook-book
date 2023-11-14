@@ -14,9 +14,7 @@
                         <li><strong>Meal Type: </strong>{{ recipe.meal_type|title }}</li>
                         <li>
                             <strong>Ready In: </strong>
-                            {% for item in recipe.ready_in %}
-                                {{ item.hours }} Hrs {{ item.minutes }} Mins
-                            {% endfor %}
+                            {{ recipe.ready_in.hours }} Hrs {{ recipe.ready_in.minutes }} Mins
                         </li>
                         <li><strong>Difficulty: </strong>{{ recipe.difficulty|capitalize }}</li>
                         <li><strong>Created By: </strong>Chef {{ recipe.created_by }}</li>
