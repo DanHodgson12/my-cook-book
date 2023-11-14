@@ -54,117 +54,75 @@
                     <label for="ready_minutes"></label>
                 </div>
             </div>
-            <!-- ingredients add button -->
-            <!-- <div class="row">
-                <div class="col s12">
-                    <h6>
-                        Ingredients:
-                        <a class="btn-floating waves-effect waves-light" id="add-ingredient">
-                            <i class="fa-solid fa-circle-plus"></i>
-                        </a>
-                    </h6>
-                </div>
-            </div> -->
-            <div>
-                <div class="row">
-                    <div class="col s12 m6 input-field">
-                        <label for="ingredients">Ingredients (one per line)</label>
-                        <textarea name="ingredients" id="ingredients" class="validate materialize-textarea" style="height: 20vh;" required
-                        placeholder="Example: &#10 2 Chicken Breast &#10 500g Flour &#10 2 tsp Sugar &#10 50 g ground almonds &#10 1 x 400 g tin of chickpeas"></textarea>
-                    </div>
-                </div>
-            </div>
-            <!-- ingredients table -->
-            <!-- <div>
-                <div class="row">
-                    <div class="col s12 input-field">
-                        <table id="ingredients-table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <label for="name[]">Food</label>
-                                    </th>
-                                    <th>
-                                        <label for="quantity[]">Quantity</label>
-                                    </th>
-                                    <th>
-                                        <label for="unit[]">Unit (optional)</label>
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <input name="name[]" id="name[]" type="text" minlength="3" class="validate"
-                                        required placeholder="(e.g. Chicken Breast, Brown Onion, Garlic Powder, etc)">
-                                    </td>
-                                    <td>
-                                        <input name="quantity[]" id="quantity[]" type="number" class="validate " required placeholder="(e.g. 2, 500, etc)">
-                                    </td>
-                                    <td>
-                                        <input name="unit[]" id="unit[]" type="text" maxlength="10" class="validate"
-                                            placeholder="(e.g. kg, g, l, ml, cup, tsp, tbsp, etc)">
-                                    </td>
-                                    <td>
-                                        <a class="btn-floating waves-effect waves-light" id="delete-ingredient">
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div> -->
-            <!-- method label and add button -->
             <div class="row">
-                <div class="col s12">
-                    <h6>
-                        Method:
-                        <a class="btn-floating waves-effect waves-light" id="add-step">
-                            <i class="fa-solid fa-circle-plus"></i>
-                        </a>
-                    </h6>
+                <div class="col s12 m6 offset-m3 input-field">
+                    <label for="ingredients"><strong>Ingredients (one per line)</strong></label>
+                    <textarea name="ingredients" id="ingredients" class="validate materialize-textarea" style="height: 15vh;" required
+                    placeholder="Example: &#10 2 Chicken Breast &#10 500g Flour &#10 2 tsp Sugar &#10 50 g ground almonds &#10 1 x 400 g tin of chickpeas"></textarea>
                 </div>
             </div>
-            <!-- method table -->
-            <div>
-                <div class="row">
-                    <div class="col s12 input-field">
-                        <table id="method-table">
-                            <thead>
-                                <tr>
-                                    <th>Step</th>
-                                    <th>
-                                        <label for="step_desc[]">Method</label>
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            <span id="step-number">1</span>
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        <textarea id="step_desc[]" name="step_desc" minlength="5" maxlength="500"
-                                        class="validate materialize-textarea" required></textarea>
-                                    </td>
-                                    <td>
-                                        <a class="btn-floating waves-effect waves-light" id="delete-step">
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="row">
+                <div class="col s12 input-field">
+                    <table id="method-table">
+                        <thead>
+                            <tr>
+                                <th>Step</th>
+                                <th>Method</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1.</strong></td>
+                                <label for="step_desc-1"></label>
+                                <td><textarea id="step_desc-1" name="step_desc[]" minlength="5" maxlength="500"
+                                        class="validate materialize-textarea" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2.</strong></td>
+                                <label for="step_desc-2"></label>
+                                <td><textarea id="step_desc-2" name="step_desc[]" minlength="5" maxlength="500"
+                                        class="validate materialize-textarea" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3.</strong></td>
+                                <label for="step_desc-3"></label>
+                                <td><textarea id="step_desc-3" name="step_desc[]" minlength="5" maxlength="500"
+                                        class="validate materialize-textarea" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><strong>4.</strong></td>
+                                <label for="step_desc-4"></label>
+                                <td><textarea id="step_desc-4" name="step_desc[]" minlength="5" maxlength="500"
+                                        class="validate materialize-textarea" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><strong>5.</strong></td>
+                                <label for="step_desc-5"></label>
+                                <td><textarea id="step_desc-5" name="step_desc[]" minlength="5" maxlength="500"
+                                        class="validate materialize-textarea" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><strong>6.</strong></td>
+                                <label for="step_desc-6"></label>
+                                <td><textarea id="step_desc-6" name="step_desc[]" minlength="5" maxlength="500"
+                                        class="validate materialize-textarea" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><strong>7.</strong></td>
+                                <label for="step_desc-7"></label>
+                                <td><textarea id="step_desc-7" name="step_desc[]" minlength="5" maxlength="500"
+                                        class="validate materialize-textarea" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><strong>8.</strong></td>
+                                <label for="step_desc-8"></label>
+                                <td><textarea id="step_desc-8" name="step_desc[]" minlength="5" maxlength="500"
+                                        class="validate materialize-textarea" required></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn waves-effect waves-light">
@@ -176,3 +134,98 @@
     </div>
 
 {% endblock %}
+
+<!-- ingredients add button -->
+<!-- <div class="row">
+                <div class="col s12">
+                    <h6>
+                        Ingredients:
+                        <a class="btn-floating waves-effect waves-light" id="add-ingredient">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </a>
+                    </h6>
+                </div>
+            </div> -->
+<!-- ingredients table -->
+<!-- <div>
+    <div class="row">
+        <div class="col s12 input-field">
+            <table id="ingredients-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <label for="name[]">Food</label>
+                        </th>
+                        <th>
+                            <label for="quantity[]">Quantity</label>
+                        </th>
+                        <th>
+                            <label for="unit[]">Unit (optional)</label>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input name="name[]" id="name[]" type="text" minlength="3" class="validate"
+                            required placeholder="(e.g. Chicken Breast, Brown Onion, Garlic Powder, etc)">
+                        </td>
+                        <td>
+                            <input name="quantity[]" id="quantity[]" type="number" class="validate " required placeholder="(e.g. 2, 500, etc)">
+                        </td>
+                        <td>
+                            <input name="unit[]" id="unit[]" type="text" maxlength="10" class="validate"
+                                placeholder="(e.g. kg, g, l, ml, cup, tsp, tbsp, etc)">
+                        </td>
+                        <td>
+                            <a class="btn-floating waves-effect waves-light" id="delete-ingredient">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+<!-- method label and add button -->
+<!-- <div class="row">
+    <div class="col s12">
+        <h6>
+            Method:
+            <a class="btn-floating waves-effect waves-light" id="add-step">
+                <i class="fa-solid fa-circle-plus"></i>
+            </a>
+        </h6>
+    </div>
+</div> -->
+<!-- method table -->
+<!-- <div class="row">
+    <div class="col s12 input-field">
+        <table id="method-table">
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>
+                        <label for="step_desc[]">Method</label>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            <span id="step-number">1</span>
+                        </strong>
+                    </td>
+                    <td>
+                        <textarea id="step_desc[]" name="step_desc" minlength="5" maxlength="500"
+                        class="validate materialize-textarea" required></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+<!-- submit button -->
