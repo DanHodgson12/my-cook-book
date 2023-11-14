@@ -103,7 +103,7 @@ def sign_out():
 def add_recipe():
     if request.method == "POST":
         all_ingredients = []
-        ingredients = request.form.get("ingredients").split(\n)
+        ingredients = request.form.get("ingredients").split('\n')
         for i in ingredients:
             all_ingredients.append(i)
 
