@@ -9,16 +9,36 @@
                     <strong>{{ recipe.recipe_name|title }}</strong>
                 </div>
                 <div class="collapsible-body">
-                    <p>{{ recipe.recipe_desc }}</p>
-                    <ul>
-                        <li><strong>Meal Type: </strong>{{ recipe.meal_type|title }}</li>
-                        <li>
-                            <strong>Ready In: </strong>
-                            {{ recipe.ready_in.hours }} Hrs {{ recipe.ready_in.minutes }} Mins
-                        </li>
-                        <li><strong>Difficulty: </strong>{{ recipe.difficulty|capitalize }}</li>
-                        <li><strong>Created By: </strong>Chef {{ recipe.created_by }}</li>
-                    </ul>
+                    <div class="recipe-container">
+                        <p>{{ recipe.recipe_desc }}</p>
+                        <ul>
+                            <li><strong>Meal Type: </strong>{{ recipe.meal_type|title }}</li>
+                            <li>
+                                <strong>Ready In: </strong>
+                                {{ recipe.ready_in.hours }} Hrs {{ recipe.ready_in.minutes }} Mins
+                            </li>
+                            <li><strong>Difficulty: </strong>{{ recipe.difficulty|capitalize }}</li>
+                            <li><strong>Created By: </strong>Chef {{ recipe.created_by }}</li>
+                        </ul>
+                    </div>
+                    <div class="row collapsible-buttons">
+                        <div class="col s5 left-align">
+                            <a class="waves-effect waves-light btn-small">
+                                Full Recipe
+                                <i class="fa-solid fa-book"></i>
+                                <a>
+                        </div>
+                        <div class="col s7 right-align">
+                            <a class="waves-effect waves-light btn-small right-align grey">
+                                Edit
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                            <a class="waves-effect waves-light btn-small right-align red">
+                                Delete
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </li>
         {% endfor %}

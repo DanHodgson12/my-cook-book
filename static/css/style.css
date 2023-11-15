@@ -13,3 +13,22 @@ nav .sidenav-trigger {
 .flashes h4 {
     line-height: 2;
 }
+
+.collapsible-body {
+    padding: 0;
+}
+
+.recipe-container {
+    padding: 1rem 1.5rem;
+}
+
+.collapsible-buttons {
+    margin-bottom: 0.5rem;
+}
+
+.btn,
+.btn-large,
+.btn-small {
+    letter-spacing: 0;
+    padding: 0 5px;
+}
