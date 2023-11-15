@@ -105,7 +105,8 @@ def add_recipe():
         all_ingredients = []
         ingredients = request.form.get("ingredients").split('\n')
         for i in ingredients:
-            all_ingredients.append(i)
+            if i.strip():
+                all_ingredients.append(i)
 
         new_recipe = {
             "recipe_name": request.form.get("recipe_name"),
