@@ -108,6 +108,13 @@ def add_recipe():
             if i.strip():
                 all_ingredients.append(i)
 
+        whole_method = []
+        for i in request.form.getlist("step_desc[]"):
+            if i == "":
+                continue
+            else:
+                whole_method.append(i)
+
         new_recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_desc": request.form.get("recipe_desc"),
@@ -118,7 +125,7 @@ def add_recipe():
                 "minutes": request.form.get("ready_minutes")
             },
             "ingredients": all_ingredients,
-            "method": request.form.getlist("step_desc[]"),
+            "method": whole_method,
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(new_recipe)
