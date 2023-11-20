@@ -10,11 +10,11 @@
                 </div>
                 <div class="collapsible-body">
                     <div class="recipe-container row">
-                        {% if recipe.recipe_img %}
+                        {% if 'recipe_img' in recipe and 'src' in recipe['recipe_img'] and recipe['recipe_img']['src'] != '' %}
                             <div class="col s12 m5 l4 center-align">
                                 <img class="recipe-img" src="{{ recipe.recipe_img.src }}"
-                                alt="Image of '{{ recipe.recipe_name|title }}' recipe."
-                                title="Image of '{{ recipe.recipe_name|title }}' recipe.">
+                                    alt="Image of '{{ recipe.recipe_name|title }}' recipe."
+                                    title="Image of '{{ recipe.recipe_name|title }}' recipe.">
                             </div>
                         {% endif %}
                         <div class="col s12 m7 l8">

@@ -115,8 +115,12 @@ def add_recipe():
             else:
                 whole_method.append(i)
 
+        recipe_img = {}
         if request.form.get("recipe_img") == "":
-            pass
+            recipe_img = {
+                "src": "",
+                "alt": ""
+            }
         else:
             recipe_img = {
                 "src": request.form.get("recipe_img"),
