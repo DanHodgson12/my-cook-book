@@ -32,3 +32,12 @@ nav .sidenav-trigger {
     letter-spacing: 0;
     padding: 0 5px;
 }
+
+.recipe-img {
+    width: 100%;
+}
+
+.no-recipe-img {
+    width: 75%;
+    border: 2px solid black;
+}
