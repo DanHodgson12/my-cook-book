@@ -115,6 +115,15 @@ def add_recipe():
             else:
                 whole_method.append(i)
 
+        if request.form.get("recipe_img") == "":
+            pass
+        else:
+            recipe_img = {
+                "src": request.form.get("recipe_img"),
+                "alt": "Image of {0} recipe.".format(
+                    request.form.get("recipe_name"))
+            }
+
         new_recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_desc": request.form.get("recipe_desc"),
@@ -126,7 +135,8 @@ def add_recipe():
             },
             "ingredients": all_ingredients,
             "method": whole_method,
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "recipe_img": recipe_img
         }
         mongo.db.recipes.insert_one(new_recipe)
         flash("Recipe Successfully Added")
