@@ -12,7 +12,9 @@
                     <div class="recipe-container row">
                         {% if recipe.recipe_img %}
                             <div class="col s12 m5 l4 center-align">
-                                <img class="recipe-img" src="{{ recipe.recipe_img.src }}" alt="Image of '{{ recipe.recipe_name|title }}' recipe.">
+                                <img class="recipe-img" src="{{ recipe.recipe_img.src }}"
+                                alt="Image of '{{ recipe.recipe_name|title }}' recipe."
+                                title="Image of '{{ recipe.recipe_name|title }}' recipe.">
                             </div>
                         {% endif %}
                         <div class="col s12 m7 l8">
