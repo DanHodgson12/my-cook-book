@@ -132,7 +132,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_desc": request.form.get("recipe_desc"),
             "meal_type": request.form.get("meal_type"),
-            "difficulty": request.form.get("difficulty"),
+            "serves": request.form.get("serves"),
             "ready_in": {
                 "hours": request.form.get("ready_hours"),
                 "minutes": request.form.get("ready_minutes")
@@ -183,7 +183,7 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_desc": request.form.get("recipe_desc"),
             "meal_type": request.form.get("meal_type"),
-            "difficulty": request.form.get("difficulty"),
+            "serves": request.form.get("serves"),
             "ready_in": {
                 "hours": request.form.get("ready_hours"),
                 "minutes": request.form.get("ready_minutes")
