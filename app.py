@@ -152,8 +152,51 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if request.method == "POST":
+        all_ingredients = []
+        ingredients = request.form.get("ingredients").split('\n')
+        for i in ingredients:
+            if i.strip():
+                all_ingredients.append(i)
 
+        whole_method = []
+        for i in request.form.getlist("step_desc[]"):
+            if i == "":
+                continue
+            else:
+                whole_method.append(i)
+
+        recipe_img = {}
+        if request.form.get("recipe_img") == "":
+            recipe_img = {
+                "src": "",
+                "alt": ""
+            }
+        else:
+            recipe_img = {
+                "src": request.form.get("recipe_img"),
+                "alt": "Image of {0} recipe.".format(
+                    request.form.get("recipe_name"))
+            }
+
+        edited_recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_desc": request.form.get("recipe_desc"),
+            "meal_type": request.form.get("meal_type"),
+            "difficulty": request.form.get("difficulty"),
+            "ready_in": {
+                "hours": request.form.get("ready_hours"),
+                "minutes": request.form.get("ready_minutes")
+            },
+            "ingredients": all_ingredients,
+            "method": whole_method,
+            "created_by": session["user"],
+            "recipe_img": recipe_img
+        }
+        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {'$set': edited_recipe})
+        flash("Recipe Successfully Updated")
+    
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
     return render_template(
         "edit_recipe.html", recipe=recipe, meal_types=meal_types)
