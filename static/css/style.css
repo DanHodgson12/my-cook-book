@@ -27,6 +27,10 @@ nav .sidenav-trigger {
     padding: 1rem 1.5rem;
 }
 
+.recipe-container div i {
+    width: 25px;
+}
+
 .collapsible-buttons {
     margin-bottom: 0.5rem;
 }
