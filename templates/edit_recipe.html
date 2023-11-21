@@ -38,6 +38,7 @@
             <div class="row">
                 <!-- meal type -->
                 <div class="input-field col s12 m4">
+                    <i class="fa-solid fa-bowl-food prefix"></i>
                     <select id="meal_type" name="meal_type" class="validate" required>
                         <option value="" disabled selected>e.g. Lunch</option>
                         {% for i in meal_types %}
@@ -52,6 +53,7 @@
                 </div>
                 <!-- serves -->
                 <div class="input-field col s12 m4">
+                    <i class="fa-solid fa-users prefix"></i>
                     <input id="serves" name="serves" type="number" class="validate" required
                         placeholder="e.g. 4-6" value="{{ recipe.serves }}">
                     <label for="serves">Serves</label>
@@ -60,7 +62,7 @@
                 <div class="input-field col s6 m2">
                     <input id="ready_hours" name="ready_hours" type="number" class="validate" required
                         placeholder="Hours" value="{{ recipe.ready_in.hours }}">
-                    <label for="ready_hours">Ready In</label>
+                    <label for="ready_hours"><i class="fa-regular fa-clock recipe-icon"></i> Ready In</label>
                 </div>
                 <div class="input-field col s6 m2">
                     <input id="ready_minutes" name="ready_minutes" type="number" class="validate" required
@@ -71,6 +73,7 @@
             <!-- ingredients -->
             <div class="row">
                 <div class="col s12 m6 offset-m3 input-field">
+                    <i class="fa-solid fa-rectangle-list prefix"></i>
                     <label for="ingredients"><strong>Ingredients (one per line)</strong></label>
                     <textarea name="ingredients" id="ingredients" class="validate materialize-textarea" style="height: 15vh;"
                         placeholder="Example: &#10 2 Chicken Breast &#10 500g Flour &#10 2 tsp Sugar &#10 50 g ground almonds &#10 1 x 400 g tin of chickpeas"
@@ -145,7 +148,7 @@
             </div>
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light red">
+                    <a href="{{ url_for('recipes') }}" class="btn waves-effect waves-light red">
                         Cancel <i class="fa-solid fa-circle-xmark"></i>
                     </a>
                     <button type="submit" class="btn waves-effect waves-light">
