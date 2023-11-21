@@ -17,20 +17,20 @@
             <p>{{ recipe.recipe_desc }}</p>
             <ul>
                 <li>
-                    <i class="fa-solid fa-bowl-food"></i>
+                    <i class="fa-solid fa-bowl-food recipe-icon"></i>
                     <strong>Meal Type: </strong>{{ recipe.meal_type|title }}
                 </li>
                 <li>
-                    <i class="fa-regular fa-clock"></i>
+                    <i class="fa-regular fa-clock recipe-icon"></i>
                     <strong>Ready In: </strong>
                     {{ recipe.ready_in.hours }} Hrs {{ recipe.ready_in.minutes }} Mins
                 </li>
                 <li>
-                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-users recipe-icon"></i>
                     <strong>Serves: </strong>{{ recipe.serves }}
                 </li>
                 <li>
-                    <i class="fa-regular fa-face-smile"></i>
+                    <i class="fa-regular fa-face-smile recipe-icon"></i>
                     <strong>Created By: </strong>Chef {{ recipe.created_by }}
                 </li>
             </ul>

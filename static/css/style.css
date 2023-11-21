@@ -3,6 +3,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    margin: 0 0 1rem;
+}
+
 .nav-wrapper {
     padding: 0 10px;
 }
@@ -27,7 +31,7 @@ nav .sidenav-trigger {
     padding: 1rem 1.5rem;
 }
 
-.recipe-container div i {
+.recipe-icon {
     width: 25px;
 }
 
