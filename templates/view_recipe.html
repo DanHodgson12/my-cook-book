@@ -6,14 +6,14 @@
     <div class="row">
         <!-- image -->
         {% if 'recipe_img' in recipe and 'src' in recipe['recipe_img'] and recipe['recipe_img']['src'] != '' %}
-        <div class="col s12 m6 l5 center-align">
+        <div class="col s12 l6 xl5 center-align">
             <img class="recipe-img" src="{{ recipe.recipe_img.src }}"
                 alt="Image of '{{ recipe.recipe_name|title }}' recipe."
                 title="Image of '{{ recipe.recipe_name|title }}' recipe.">
         </div>
         {% endif %}
         <!-- description & info -->
-        <div class="col s12 m6 l7">
+        <div class="col s12 l6 xl7">
             <p>{{ recipe.recipe_desc }}</p>
             <ul>
                 <li>
@@ -39,8 +39,8 @@
 
     <div class="row">
         <!-- ingredients -->
-        <div class="col s12 m6 l5">
-            <h3><i class="fa-solid fa-rectangle-list"></i> Ingredients</h3>
+        <div class="col s12 l5">
+            <h2><i class="fa-solid fa-rectangle-list"></i> Ingredients</h3>
             <ul>
                 {% for ingredient in recipe.ingredients %}
                     <li>{{ ingredient|title }}</li>
@@ -48,8 +48,8 @@
             </ul>
         </div>
         <!-- method -->
-        <div class="col s12 m6 l7">
-            <h3><i class="fa-solid fa-list-ol"></i> Method</h3>
+        <div class="col s12 l7">
+            <h2><i class="fa-solid fa-list-ol"></i> Method</h3>
             <ol>
                 {% for step in recipe.method %}
                 <li>{{ step }}</li>
