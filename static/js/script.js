@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('select').formSelect();
     M.textareaAutoResize($('#ingredients'));
+    $('.tabs').tabs();
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {
