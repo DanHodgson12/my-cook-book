@@ -24,10 +24,9 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('recipes') }}">Home</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                        <li><a href="#">Add Meal Type</a></li>
                         <li><a href="{{ url_for('sign_out') }}">Sign Out</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     {% else %}
                         <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -41,10 +40,9 @@
             <h4 class="center-align teal-text lighten-1">My CookBook</h4>
             <li><a href="{{ url_for('recipes') }}">Home</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                <li><a href="#">Add Meal Type</a></li>
                 <li><a href="{{ url_for('sign_out') }}">Sign Out</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             {% else %}
                 <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
