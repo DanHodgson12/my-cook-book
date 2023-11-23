@@ -201,9 +201,10 @@ def edit_recipe(recipe_id):
             "created_by": session["user"],
             "recipe_img": recipe_img
         }
-        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {'$set': edited_recipe})
+        mongo.db.recipes.update_one(
+            {"_id": ObjectId(recipe_id)}, {'$set': edited_recipe})
         flash("Recipe Successfully Updated")
-    
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
     return render_template(
