@@ -40,7 +40,7 @@
     <div class="row">
         <!-- ingredients -->
         <div class="col s12 l5">
-            <h2><i class="fa-solid fa-rectangle-list"></i> Ingredients</h3>
+            <h2><i class="fa-solid fa-rectangle-list"></i> Ingredients</h2>
             <ul>
                 {% for ingredient in recipe.ingredients %}
                     <li>{{ ingredient|title }}</li>
@@ -49,7 +49,7 @@
         </div>
         <!-- method -->
         <div class="col s12 l7">
-            <h2><i class="fa-solid fa-list-ol"></i> Method</h3>
+            <h2><i class="fa-solid fa-list-ol"></i> Method</h2>
             <ol>
                 {% for step in recipe.method %}
                 <li>{{ step }}</li>
