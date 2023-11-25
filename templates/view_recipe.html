@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+    <!-- save/edit/delete buttons -->
+    <div class="row">
+        <div class="col s12 {% if session.user|lower == recipe.created_by|lower %}m6{% else %}m6 offset-m3{% endif %}">
+            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
+                class="waves-effect waves-light btn green darken-1">
+                Full Recipe
+                <i class="fa-solid fa-book"></i>
+                <a>
+        </div>
+        
+    </div>
     <!-- header -->
     <h1 class="center-align"><strong>{{ recipe.recipe_name|title }}</strong></h1>
 
@@ -57,5 +68,22 @@
             </ol>
         </div>
     </div>
+
+    {% if session.user|lower == recipe.created_by|lower %}
+        <div class="row collapsible-buttons">
+            <div class="col s6 m3 offset-m3 center-align">    
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn blue lighten-1">
+                    Edit
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </a>
+            </div>
+            <div class="col s6 m3 center-align">
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn red">
+                    Delete
+                    <i class="fa-solid fa-trash-can"></i>
+                </a>
+            </div>
+        </div>
+    {% endif %}
 
 {% endblock %}
