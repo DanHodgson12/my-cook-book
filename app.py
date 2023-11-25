@@ -35,6 +35,18 @@ def view_recipe(recipe_id):
         "view_recipe.html", recipe=recipe, meal_types=meal_types)
 
 
+@app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
+def save_recipe(recipe_id):
+    if request.method == "POST":
+        mongo.db.users.update_one(
+            {"username": session["user"]},
+            {"$addToSet": {"my_cookbook": recipe_id}}
+        )
+        flash("Recipe Successfully Saved")
+
+    return redirect(url_for("view_recipe", recipe_id=recipe_id))
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -48,7 +60,8 @@ def register():
 
         new_user = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "my_cookbook": []
         }
 
         mongo.db.users.insert_one(new_user)

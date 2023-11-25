@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <!-- save/edit/delete buttons -->
+    <!-- save button -->
     <div class="row">
-        <div class="col s12 {% if session.user|lower == recipe.created_by|lower %}m6{% else %}m6 offset-m3{% endif %}">
-            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
-                class="waves-effect waves-light btn green darken-1">
-                Full Recipe
-                <i class="fa-solid fa-book"></i>
-                <a>
+        <div class="col s3">
+            <form action="{{ url_for('save_recipe', recipe_id=recipe._id) }}" method="POST">
+                <button type="submit" class="waves-effect waves-light btn grey">Save <i class="fa-solid fa-book"></i></button>
+            </form>
         </div>
-        
     </div>
     <!-- header -->
     <h1 class="center-align"><strong>{{ recipe.recipe_name|title }}</strong></h1>
@@ -68,7 +65,7 @@
             </ol>
         </div>
     </div>
-
+    <!-- edit/delete buttons -->
     {% if session.user|lower == recipe.created_by|lower %}
         <div class="row collapsible-buttons">
             <div class="col s6 m3 offset-m3 center-align">    
