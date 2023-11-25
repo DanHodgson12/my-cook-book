@@ -154,7 +154,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(new_recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("get_recipes"))
+        return redirect(url_for("recipes"))
 
     meal_types = mongo.db.meal_types.find()
     return render_template("add_recipe.html", meal_types=meal_types)
@@ -217,7 +217,7 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
-    return redirect(url_for("get_recipes"))
+    return redirect(url_for("recipes"))
 
 
 if __name__ == "__main__":
