@@ -60,11 +60,13 @@ nav .sidenav-trigger {
     letter-spacing: 0;
 }
 
-#my-recipes .recipe-container {
+#my-recipes .recipe-container,
+#saved-recipes .recipe-container {
     margin: 0;
 }
 
-#my-recipes .collapsible-buttons {
+#my-recipes .collapsible-buttons,
+#saved-recipes .collapsible-buttons {
     margin: 0.3rem;
 }
 

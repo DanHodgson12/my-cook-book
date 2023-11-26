@@ -90,8 +90,77 @@
                 {% endfor %}
             </ul>
         </div>
+        
         <!-- user's saved recipes -->
-        <div id="saved-recipes" class="col s12">Test 2</div>
+        <div id="saved-recipes" class="col s12">
+            <ul class="collapsible">
+                {% for recipe in my_cookbook %}
+                    <li>
+                        <div class="collapsible-header white-text teal lighten-1 text-shadow">
+                            <i class="fa-solid fa-caret-down prefix"></i>
+                            <strong>{{ recipe.recipe_name|title }}</strong>
+                        </div>
+                        <div class="collapsible-body">
+                            <div class="recipe-container row">
+                                {% if 'recipe_img' in recipe and 'src' in recipe['recipe_img'] and recipe['recipe_img']['src'] != '' %}
+                                <div class="col s12 m5 l4 center-align">
+                                    <img class="recipe-img" src="{{ recipe.recipe_img.src }}"
+                                        alt="Image of '{{ recipe.recipe_name|title }}' recipe."
+                                        title="Image of '{{ recipe.recipe_name|title }}' recipe.">
+                                </div>
+                                {% endif %}
+                                <div class="col s12 m7 l8">
+                                    <p>{{ recipe.recipe_desc }}</p>
+                                    <ul>
+                                        <li>
+                                            <i class="fa-solid fa-bowl-food recipe-icon"></i>
+                                            <strong>Meal Type: </strong>{{ recipe.meal_type|title }}
+                                        </li>
+                                        <li>
+                                            <i class="fa-regular fa-clock recipe-icon"></i>
+                                            <strong>Ready In: </strong>
+                                            {{ recipe.ready_in.hours }} Hrs {{ recipe.ready_in.minutes }} Mins
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-users recipe-icon"></i>
+                                            <strong>Serves: </strong>{{ recipe.serves }}
+                                        </li>
+                                        <li>
+                                            <i class="fa-regular fa-face-smile recipe-icon"></i>
+                                            <strong>Created By: </strong>Chef {{ recipe.created_by }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row collapsible-buttons">
+                                <div class="col s12 {% if session.user|lower == recipe.created_by|lower %}m6{% else %}m6 offset-m3{% endif %}">
+                                    <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn green darken-1">
+                                        View Full Recipe
+                                        <i class="fa-solid fa-book"></i>
+                                    <a>
+                                </div>
+                                {% if session.user|lower == recipe.created_by|lower %}
+                                    <div class="col s6 m3">
+                                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                                            class="waves-effect waves-light btn blue lighten-1">
+                                            Edit
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col s6 m3">
+                                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                                            class="waves-effect waves-light btn red">
+                                            Delete
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
 {% endblock %}

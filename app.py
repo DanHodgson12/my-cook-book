@@ -105,11 +105,17 @@ def profile(username):
     # grab the session user's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    my_cookbook_ids = user.get('my_cookbook', [])
+    my_cookbook_ids = [ObjectId(recipe_id) for recipe_id in my_cookbook_ids]
+    my_cookbook = mongo.db.recipes.find({'_id': {'$in': my_cookbook_ids}})
+    print(my_cookbook)
 
     if session["user"]:
         recipes = list(mongo.db.recipes.find())
         return render_template(
-            "profile.html", username=username, recipes=recipes)
+            "profile.html", username=username, recipes=recipes, my_cookbook=my_cookbook)
 
     return redirect(url_for("sign_in"))
 
