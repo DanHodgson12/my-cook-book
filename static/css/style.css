@@ -23,9 +23,16 @@ nav .sidenav-trigger {
     margin: 0;
 }
 
-.flashes h1 {
-    margin: 0;
-    line-height: 1.5;
+.flashes li {
+    border: 1px solid #0000004f;
+}
+
+.error {
+    background-color: red;
+}
+
+.success {
+    background-color: #36b136;
 }
 
 .collapsible-body {

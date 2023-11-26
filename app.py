@@ -42,7 +42,7 @@ def save_recipe(recipe_id):
             {"username": session["user"]},
             {"$addToSet": {"my_cookbook": recipe_id}}
         )
-        flash("Recipe Successfully Saved")
+        flash("Recipe Successfully Saved", "success")
 
     return redirect(url_for("view_recipe", recipe_id=recipe_id))
 
@@ -55,7 +55,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists")
+            flash("Username already exists", "error")
             return redirect(url_for("register"))
 
         new_user = {
@@ -68,7 +68,7 @@ def register():
 
         # put the new_user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful")
+        flash("Registration Successful", "success")
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
@@ -86,15 +86,15 @@ def sign_in():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash("Welcome, {}".format(request.form.get("username")), "success")
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password", "error")
                 return redirect(url_for("sign_in"))
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password", "error")
             return redirect(url_for("sign_in"))
 
     return render_template("sign_in.html")
@@ -117,7 +117,7 @@ def profile(username):
 @app.route("/sign_out")
 def sign_out():
     # remove user from session cookies
-    flash("You have been logged out")
+    flash("You have been logged out", "success")
     session.pop("user")
     return redirect(url_for("sign_in"))
 
@@ -166,7 +166,7 @@ def add_recipe():
             "recipe_img": recipe_img
         }
         mongo.db.recipes.insert_one(new_recipe)
-        flash("Recipe Successfully Added")
+        flash("Recipe Successfully Added", "success")
         return redirect(url_for("recipes"))
 
     meal_types = mongo.db.meal_types.find()
@@ -218,7 +218,7 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update_one(
             {"_id": ObjectId(recipe_id)}, {'$set': edited_recipe})
-        flash("Recipe Successfully Updated")
+        flash("Recipe Successfully Updated", "success")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
@@ -229,7 +229,7 @@ def edit_recipe(recipe_id):
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-    flash("Recipe Successfully Deleted")
+    flash("Recipe Successfully Deleted", "success")
     return redirect(url_for("recipes"))
 
 
