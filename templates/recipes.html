@@ -43,13 +43,14 @@
                     <div class="row collapsible-buttons">
                         <div class="col s12 {% if session.user|lower == recipe.created_by|lower %}m6{% else %}m6 offset-m3{% endif %}">
                             <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn green darken-1">
-                                Full Recipe
+                                View Full Recipe
                                 <i class="fa-solid fa-book"></i>
                             <a>
                         </div>
                         {% if session.user|lower == recipe.created_by|lower %}
                             <div class="col s6 m3">
-                                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn blue lighten-1">
+                                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                                    class="waves-effect waves-light btn blue lighten-1">
                                     Edit
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>

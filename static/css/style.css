@@ -60,6 +60,14 @@ nav .sidenav-trigger {
     letter-spacing: 0;
 }
 
+#my-recipes .recipe-container {
+    margin: 0;
+}
+
+#my-recipes .collapsible-buttons {
+    margin: 0.3rem;
+}
+
 .recipe-img {
     width: 100%;
 }
