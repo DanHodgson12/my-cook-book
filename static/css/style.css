@@ -19,8 +19,13 @@ nav .sidenav-trigger {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-.flashes h4 {
-    line-height: 2;
+.flashes {
+    margin: 0;
+}
+
+.flashes h1 {
+    margin: 0;
+    line-height: 1.5;
 }
 
 .collapsible-body {
