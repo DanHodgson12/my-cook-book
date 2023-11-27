@@ -86,7 +86,8 @@ def sign_in():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")), "success")
+                flash("Welcome, {}".format(
+                    request.form.get("username")), "success")
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
@@ -115,7 +116,8 @@ def profile(username):
     if session["user"]:
         recipes = list(mongo.db.recipes.find())
         return render_template(
-            "profile.html", username=username, recipes=recipes, my_cookbook=my_cookbook)
+            "profile.html", username=username,
+            recipes=recipes, my_cookbook=my_cookbook)
 
     return redirect(url_for("sign_in"))
 
