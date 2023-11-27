@@ -1,12 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="recipe-container row">
-        <div class="col s12 m7 l8">
-            <p>efgrhjdfghnetyndsfgbedrtygbndsfgbetdygbdfgb</p>
+    <h1 class="center-align">Welcome to My CookBook!</h1>
+
+    <div class="row home">
+        <div class="col s12 l6">
+            <p>
+                A place where you can create your own recipes,
+                view recipes by others passionate about cooking,
+                and save recipes to create your own recipe book.
+            </p>
+            <p>
+                To get started simply
+                <a class="waves-effect waves-light btn-small" href="{{ url_for('sign_in') }}">Sign In</a>
+                or
+                <a class="waves-effect waves-light btn-small" href="{{ url_for('register') }}">Register</a>
+                to create a profile.
+            </p>
+            <p>
+                Next, head to the
+                <a class="waves-effect waves-light btn-small" href="{{ url_for('recipes') }}">Recipes</a>
+                page to search for your favourite recipes.
+            </p>
+            <p>
+                If you see any that you like, click 'View Full Recipe' to see the
+                ingredients and cooking method. You can then click 'Save' to add
+                the recipe to your cookbook, which you'll find in the 'My CookBook'
+                tab in your profile.
+            </p>
+            <p>
+                If you've got your own recipe you'd like to add, head to the
+                <a class="waves-effect waves-light btn-small" href="{{ url_for('add_recipe') }}">Add Recipe</a>
+                page. Your recipes will also show in the 'My Recipes'
+                tab in your profile.
+            </p>
         </div>
-        <div class="col s12 m5 l4 center-align">
-            <img class="recipe-img" src="" alt="" title="">
+        <div class="col s12 l6 center-align">
+            <img class="" src="" alt="" title="">
         </div>
     </div>
 
