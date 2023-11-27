@@ -115,7 +115,6 @@ def profile(username):
     my_cookbook_ids = user.get('my_cookbook', [])
     my_cookbook_ids = [ObjectId(recipe_id) for recipe_id in my_cookbook_ids]
     my_cookbook = mongo.db.recipes.find({'_id': {'$in': my_cookbook_ids}})
-    print(my_cookbook)
 
     if session["user"]:
         recipes = list(mongo.db.recipes.find())
