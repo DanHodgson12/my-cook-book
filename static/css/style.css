@@ -68,7 +68,8 @@ nav .sidenav-trigger {
     padding: 0.2rem;
 }
 
-.collapsible-buttons a {
+.collapsible-buttons a,
+.collapsible-buttons button {
     width: 100%;
     letter-spacing: 0;
 }
