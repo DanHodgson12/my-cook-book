@@ -20,11 +20,17 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
+    """
+    Home view
+    """
     return render_template('home.html')
 
 
 @app.route("/recipes/")
 def recipes():
+    """
+    Recipes view - shows list of added recipes
+    """
     recipes = list(mongo.db.recipes.find())
     meal_types = mongo.db.meal_types.find()
     return render_template(
@@ -33,6 +39,10 @@ def recipes():
 
 @app.route("/recipes/<recipe_id>")
 def view_recipe(recipe_id):
+    """
+    Recipe-specific view - shows the full version
+    of the recipe the user clicks on
+    """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
     return render_template(
@@ -41,6 +51,10 @@ def view_recipe(recipe_id):
 
 @app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
 def save_recipe(recipe_id):
+    """
+    Save recipe function - saves the recipe to show in
+    the 'My CookBook' tab in the user's profile
+    """
     if request.method == "POST":
         mongo.db.users.update_one(
             {"username": session["user"]},
@@ -53,6 +67,10 @@ def save_recipe(recipe_id):
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Register view - shows the register page and
+    functionality to add a new user
+    """
     if request.method == "POST":
         # check if username already exists in database
         existing_user = mongo.db.users.find_one(
@@ -80,6 +98,10 @@ def register():
 
 @app.route("/sign_in", methods=["GET", "POST"])
 def sign_in():
+    """
+    Sign-in view - shows the sign-in page and
+    functionality to sign the user in
+    """
     if request.method == "POST":
         # check if username already exists in database
         existing_user = mongo.db.users.find_one(
@@ -107,6 +129,11 @@ def sign_in():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    """
+    Profile view - shows the user's profile, along with a
+    tab for the user's added recipes and a tab for
+    the user's saved recipes
+    """
     # grab the session user's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -127,6 +154,9 @@ def profile(username):
 
 @app.route("/sign_out")
 def sign_out():
+    """
+    Sign out function - signs the user out
+    """
     # remove user from session cookies
     flash("You have been logged out", "success")
     session.pop("user")
@@ -135,6 +165,10 @@ def sign_out():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    """
+    Add Recipe view - shows add recipe page and
+    functionality for adding a recipe
+    """
     if request.method == "POST":
         all_ingredients = []
         ingredients = request.form.get("ingredients").split('\n')
@@ -186,6 +220,10 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    """
+    Edit Recipe view - shows edit recipe page and
+    functionality for editing a recipe
+    """
     if request.method == "POST":
         all_ingredients = []
         ingredients = request.form.get("ingredients").split('\n')
@@ -239,6 +277,10 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    """
+    Delete Recipe function - delete's a recipe from the
+    database when user clicks 'delete' button
+    """
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted", "success")
     return redirect(url_for("recipes"))
