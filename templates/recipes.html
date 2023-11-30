@@ -3,9 +3,9 @@
 
     <ul class="collapsible">
         {% for recipe in recipes %}
-            <li>
+            <li {% if loop.first %}class="active"{% endif %}>
                 <div class="collapsible-header white-text dark-red text-shadow">
-                    <i class="fa-solid fa-caret-down prefix"></i>
+                    <i class="fa-solid fa-caret-right prefix"></i>
                     <strong>{{ recipe.recipe_name|title }}</strong>
                 </div>
                 <div class="collapsible-body">

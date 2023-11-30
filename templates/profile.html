@@ -14,8 +14,8 @@
     <div class="row">
         <div class="col s12">
             <ul class="tabs tabs-fixed-width">
-                <li class="tab col s3"><a class="active" href="#my-recipes">My Recipes</a></li>
-                <li class="tab col s3"><a href="#saved-recipes">My CookBook</a></li>
+                <li class="tab col s3"><a href="#my-recipes">My Recipes</a></li>
+                <li class="tab col s3"><a class="active" href="#saved-recipes">My CookBook</a></li>
             </ul>
         </div>
         <!-- user's created recipes -->
@@ -23,9 +23,9 @@
             <ul class="collapsible">
                 {% for recipe in recipes %}
                     {% if session.user|lower == recipe.created_by|lower %}
-                        <li>
+                        <li {% if loop.first %}class="active"{% endif %}>
                             <div class="collapsible-header white-text dark-red text-shadow">
-                                <i class="fa-solid fa-caret-down prefix"></i>
+                                <i class="fa-solid fa-caret-right prefix"></i>
                                 <strong>{{ recipe.recipe_name|title }}</strong>
                             </div>
                             <div class="collapsible-body">
@@ -103,9 +103,9 @@
         <div id="saved-recipes" class="col s12">
             <ul class="collapsible">
                 {% for recipe in my_cookbook %}
-                    <li>
+                    <li {% if loop.first %}class="active"{% endif %}>
                         <div class="collapsible-header white-text dark-red text-shadow">
-                            <i class="fa-solid fa-caret-down prefix"></i>
+                            <i class="fa-solid fa-caret-right prefix"></i>
                             <strong>{{ recipe.recipe_name|title }}</strong>
                         </div>
                         <div class="collapsible-body">
