@@ -16,7 +16,7 @@
     <header>
         <!-- main navbar -->
         <nav>
-            <div class="nav-wrapper text-shadow dark-red">
+            <div class="nav-wrapper text-shadow red darken-4">
                 <a href="{{ url_for('home') }}" class="brand-logo">My CookBook</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
                     <i class="fa-solid fa-bars"></i>
@@ -38,7 +38,7 @@
         
         <!-- mobile navbar -->
         <ul class="sidenav" id="mobile-demo">
-            <h4 class="center-align dark-red-text">My CookBook</h4>
+            <h4 class="center-align red-text text-darken-4">My CookBook</h4>
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
             {% if session.user %}

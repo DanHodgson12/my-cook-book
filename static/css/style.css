@@ -27,20 +27,20 @@ a {
     text-decoration: none;
 }
 
+.a-btn {
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 p {
     margin: 0 0 1rem;
 }
 
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.dark-red {
-    background-color: darkred;
-}
-
-.dark-red-text {
-    color: darkred;
 }
 
 /* NavBar */
@@ -69,20 +69,6 @@ nav .sidenav-trigger {
 
 .success {
     background-color: #36b136;
-}
-
-/* Home Page */
-
-.home a {
-    padding: 0 10px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 10px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.home a:hover {
-    background-color: #c11111;
 }
 
 /* Collapsibles/Recipe Container */
