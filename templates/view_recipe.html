@@ -3,7 +3,7 @@
     <!-- save button -->
     <div class="row">
         <div class="col s3">
-            <form action="{{ url_for('save_recipe', recipe_id=recipe._id) }}" method="POST">
+            <form action="{{ url_for('save_recipe', recipe_id=recipe._id, current_page=url_for('view_recipe', recipe_id=recipe_id)) }}" method="POST">
                 <button type="submit" class="waves-effect waves-light btn grey">Save <i class="fa-solid fa-book"></i></button>
             </form>
         </div>

@@ -34,7 +34,7 @@ def recipes():
     recipes = list(mongo.db.recipes.find())
     meal_types = mongo.db.meal_types.find()
     return render_template(
-        "recipes.html", recipes=recipes, meal_types=meal_types)
+        "recipes.html", recipes=recipes, meal_types=meal_types, current_page=url_for('recipes'))
 
 
 @app.route("/recipes/<recipe_id>")
@@ -46,7 +46,7 @@ def view_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
     return render_template(
-        "view_recipe.html", recipe=recipe, meal_types=meal_types)
+        "view_recipe.html", recipe=recipe, meal_types=meal_types, recipe_id=recipe_id, current_page=url_for('view_recipe', recipe_id=recipe_id))
 
 
 @app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -62,7 +62,8 @@ def save_recipe(recipe_id):
         )
         flash("Recipe Successfully Saved", "success")
 
-    return redirect(url_for("view_recipe", recipe_id=recipe_id))
+    current_page = request.args.get('current_page')
+    return redirect(current_page)
 
 
 @app.route("/register", methods=["GET", "POST"])
