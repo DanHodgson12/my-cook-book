@@ -1,80 +1,104 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <ul class="collapsible">
-        {% for recipe in recipes %}
-            <li {% if loop.first %}class="active"{% endif %}>
-                <div class="collapsible-header white-text red darken-4 text-shadow">
-                    <i class="fa-solid fa-caret-right prefix"></i>
-                    <strong>{{ recipe.recipe_name|title }}</strong>
+    <h1 class="center-align">Recipes</h1>
+
+    <div class="row card-panel grey lighten-5">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix red-text text-darken-4"></i>
+                    <input type="text" name="search" id="search" minlength="3" class="validate" required>
+                    <label for="search">Search Recipes</label>
                 </div>
-                <div class="collapsible-body">
-                    <div class="recipe-container row">
-                        {% if 'recipe_img' in recipe and 'src' in recipe['recipe_img'] and recipe['recipe_img']['src'] != '' %}
-                            <div class="col s12 m5 l4 center-align">
-                                <img class="recipe-img" src="{{ recipe.recipe_img.src }}"
-                                    alt="Image of '{{ recipe.recipe_name|title }}' recipe."
-                                    title="Image of '{{ recipe.recipe_name|title }}' recipe.">
+                <div class="col s12 m4">
+                    <a href="{{ url_for('recipes') }}" class="red btn text-shadow">Reset</a>
+                    <button type="submit" class="red darken-4 btn text-">
+                        <i class="fas fa-search left"></i> Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% if recipes|length > 0 %}
+        <ul class="collapsible">
+            {% for recipe in recipes %}
+                <li {% if loop.first %}class="active"{% endif %}>
+                    <div class="collapsible-header white-text red darken-4 text-shadow">
+                        <i class="fa-solid fa-caret-right prefix"></i>
+                        <strong>{{ recipe.recipe_name|title }}</strong>
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="recipe-container row">
+                            {% if 'recipe_img' in recipe and 'src' in recipe['recipe_img'] and recipe['recipe_img']['src'] != '' %}
+                                <div class="col s12 m5 l4 center-align">
+                                    <img class="recipe-img" src="{{ recipe.recipe_img.src }}"
+                                        alt="Image of '{{ recipe.recipe_name|title }}' recipe."
+                                        title="Image of '{{ recipe.recipe_name|title }}' recipe.">
+                                </div>
+                            {% endif %}
+                            <div class="col s12 m7 l8">
+                                <p>{{ recipe.recipe_desc }}</p>
+                                <ul>
+                                    <li>
+                                        <i class="fa-solid fa-bowl-food recipe-icon"></i>
+                                        <strong>Meal Type: </strong>{{ recipe.meal_type|title }}
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-clock recipe-icon"></i>
+                                        <strong>Ready In: </strong>
+                                        {{ recipe.ready_in.hours }} Hrs {{ recipe.ready_in.minutes }} Mins
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-users recipe-icon"></i>
+                                        <strong>Serves: </strong>{{ recipe.serves }}
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-face-smile recipe-icon"></i>
+                                        <strong>Created By: </strong>Chef {{ recipe.created_by }}
+                                    </li>
+                                </ul>
                             </div>
-                        {% endif %}
-                        <div class="col s12 m7 l8">
-                            <p>{{ recipe.recipe_desc }}</p>
-                            <ul>
-                                <li>
-                                    <i class="fa-solid fa-bowl-food recipe-icon"></i>
-                                    <strong>Meal Type: </strong>{{ recipe.meal_type|title }}
-                                </li>
-                                <li>
-                                    <i class="fa-regular fa-clock recipe-icon"></i>
-                                    <strong>Ready In: </strong>
-                                    {{ recipe.ready_in.hours }} Hrs {{ recipe.ready_in.minutes }} Mins
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-users recipe-icon"></i>
-                                    <strong>Serves: </strong>{{ recipe.serves }}
-                                </li>
-                                <li>
-                                    <i class="fa-regular fa-face-smile recipe-icon"></i>
-                                    <strong>Created By: </strong>Chef {{ recipe.created_by }}
-                                </li>
-                            </ul>
+                        </div>
+                        <div class="row collapsible-buttons">
+                            <div class="col s12 m6 {% if session.user|lower == recipe.created_by|lower %}l3{% else %}l3 offset-l3{% endif %}">
+                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn red darken-4">
+                                    Full Recipe
+                                    <i class="fa-solid fa-book"></i>
+                                <a>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <form action="{{ url_for('save_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}" method="POST">
+                                    <button type="submit" class="waves-effect waves-light btn grey">
+                                        Save Recipe
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            {% if session.user|lower == recipe.created_by|lower %}
+                                <div class="col s6 m6 l3">
+                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                                        class="waves-effect waves-light btn blue lighten-1">
+                                        Edit
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </div>
+                                <div class="col s6 m6 l3">
+                                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                                        class="waves-effect waves-light btn red">
+                                        Delete
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </a>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
-                    <div class="row collapsible-buttons">
-                        <div class="col s12 m6 {% if session.user|lower == recipe.created_by|lower %}l3{% else %}l3 offset-l3{% endif %}">
-                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn red darken-4">
-                                Full Recipe
-                                <i class="fa-solid fa-book"></i>
-                            <a>
-                        </div>
-                        <div class="col s12 m6 l3">
-                            <form action="{{ url_for('save_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}" method="POST">
-                                <button type="submit" class="waves-effect waves-light btn grey">
-                                    Save Recipe
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </form>
-                        </div>
-                        {% if session.user|lower == recipe.created_by|lower %}
-                            <div class="col s6 m6 l3">
-                                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                                    class="waves-effect waves-light btn blue lighten-1">
-                                    Edit
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </a>
-                            </div>
-                            <div class="col s6 m6 l3">
-                                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                                    class="waves-effect waves-light btn red">
-                                    Delete
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </a>
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2 class="red-text center-align">No Recipes Found</h2>
+    {% endif %}
 
 {% endblock %}
