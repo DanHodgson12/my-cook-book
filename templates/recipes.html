@@ -68,14 +68,25 @@
                                     <i class="fa-solid fa-book"></i>
                                 <a>
                             </div>
-                            <div class="col s12 m6 l3">
-                                <form action="{{ url_for('save_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}" method="POST">
-                                    <button type="submit" class="waves-effect waves-light btn grey">
-                                        Save Recipe
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                </form>
-                            </div>
+                            {% if recipe._id|string in my_cookbook %}
+                                <div class="col s12 m6 l3">
+                                    <form action="{{ url_for('save_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}" method="POST">
+                                        <button type="submit" class="waves-effect waves-light btn orange text-shadow">
+                                            Forget Recipe
+                                            <i class="fa-solid fa-eraser"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <div class="col s12 m6 l3">
+                                    <form action="{{ url_for('save_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}" method="POST">
+                                        <button type="submit" class="waves-effect waves-light btn green text-shadow">
+                                            Save Recipe
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            {% endif %}
                             {% if session.user|lower == recipe.created_by|lower %}
                                 <div class="col s6 m6 l3">
                                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"

@@ -29,12 +29,17 @@ def home():
 @app.route("/recipes/")
 def recipes():
     """
-    Recipes view - shows list of added recipes
+    Recipes view - shows list of added recipes. Shows 'edit' and 'delete'
+    buttons dependingn on whether or not the user created the recipe.
+    Shows 'save' and 'forgot' buttons depending on whether or not user
+    has saved recipe to 'my_cookbook'.
     """
     recipes = list(mongo.db.recipes.find())
     meal_types = mongo.db.meal_types.find()
+    my_cookbook = mongo.db.users.find_one(
+        {"username": session["user"]}).get('my_cookbook', [])
     return render_template(
-        "recipes.html", recipes=recipes, meal_types=meal_types, current_page=url_for('recipes'))
+        "recipes.html", recipes=recipes, meal_types=meal_types, my_cookbook=my_cookbook, current_page=url_for('recipes'))
 
 
 @app.route("/search", methods=["GET", "POST"])
