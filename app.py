@@ -44,6 +44,10 @@ def recipes():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    Search function - allows user to search for recipes based on words
+    in the name or ingredients of the recipe.
+    """
     search = request.form.get("search")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": search}}))
     meal_types = mongo.db.meal_types.find()
@@ -67,7 +71,7 @@ def view_recipe(recipe_id):
 def save_recipe(recipe_id):
     """
     Save recipe function - saves the recipe to show in
-    the 'My CookBook' tab in the user's profile
+    the 'My CookBook' tab in the user's profile.
     """
     if request.method == "POST":
         mongo.db.users.update_one(
@@ -80,11 +84,28 @@ def save_recipe(recipe_id):
     return redirect(current_page)
 
 
+@app.route("/forget_recipe/<recipe_id>", methods=["GET", "POST"])
+def forget_recipe(recipe_id):
+    """
+    Forget recipe function - removes the recipe from the 
+    user's cookbook.
+    """
+    if request.method == "POST":
+        mongo.db.users.update_one(
+            {"username": session["user"]},
+            {"$pull": {"my_cookbook": recipe_id}}
+        )
+        flash("Recipe Successfully Removed From CookBook", "success")
+
+    current_page = request.args.get('current_page')
+    return redirect(current_page)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """
     Register view - shows the register page and
-    functionality to add a new user
+    functionality to add a new user.
     """
     if request.method == "POST":
         # check if username already exists in database
@@ -115,7 +136,7 @@ def register():
 def sign_in():
     """
     Sign-in view - shows the sign-in page and
-    functionality to sign the user in
+    functionality to sign the user in.
     """
     if request.method == "POST":
         # check if username already exists in database
@@ -147,7 +168,7 @@ def profile(username):
     """
     Profile view - shows the user's profile, along with a
     tab for the user's added recipes and a tab for
-    the user's saved recipes
+    the user's saved recipes.
     """
     # grab the session user's username from the database
     username = mongo.db.users.find_one(
@@ -170,7 +191,7 @@ def profile(username):
 @app.route("/sign_out")
 def sign_out():
     """
-    Sign out function - signs the user out
+    Sign out function - signs the user out.
     """
     # remove user from session cookies
     flash("You have been logged out", "success")
@@ -182,7 +203,7 @@ def sign_out():
 def add_recipe():
     """
     Add Recipe view - shows add recipe page and
-    functionality for adding a recipe
+    functionality for adding a recipe.
     """
     if request.method == "POST":
         all_ingredients = []
@@ -237,7 +258,7 @@ def add_recipe():
 def edit_recipe(recipe_id):
     """
     Edit Recipe view - shows edit recipe page and
-    functionality for editing a recipe
+    functionality for editing a recipe.
     """
     if request.method == "POST":
         all_ingredients = []
@@ -294,7 +315,7 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     """
     Delete Recipe function - delete's a recipe from the
-    database when user clicks 'delete' button
+    database when user clicks 'delete' button.
     """
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted", "success")
