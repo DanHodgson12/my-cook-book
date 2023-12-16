@@ -39,7 +39,9 @@ def recipes():
     my_cookbook = mongo.db.users.find_one(
         {"username": session["user"]}).get('my_cookbook', [])
     return render_template(
-        "recipes.html", recipes=recipes, meal_types=meal_types, my_cookbook=my_cookbook, current_page=url_for('recipes'))
+        "recipes.html", recipes=recipes,
+        meal_types=meal_types, my_cookbook=my_cookbook,
+        current_page=url_for('recipes'))
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -52,7 +54,8 @@ def search():
     recipes = list(mongo.db.recipes.find({"$text": {"$search": search}}))
     meal_types = mongo.db.meal_types.find()
     return render_template(
-        "recipes.html", recipes=recipes, meal_types=meal_types, current_page=url_for('recipes'))
+        "recipes.html", recipes=recipes,
+        meal_types=meal_types, current_page=url_for('recipes'))
 
 
 @app.route("/recipes/<recipe_id>")
@@ -64,7 +67,9 @@ def view_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
     return render_template(
-        "view_recipe.html", recipe=recipe, meal_types=meal_types, recipe_id=recipe_id, current_page=url_for('view_recipe', recipe_id=recipe_id))
+        "view_recipe.html", recipe=recipe,
+        meal_types=meal_types, recipe_id=recipe_id,
+        current_page=url_for('view_recipe', recipe_id=recipe_id))
 
 
 @app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -87,7 +92,7 @@ def save_recipe(recipe_id):
 @app.route("/forget_recipe/<recipe_id>", methods=["GET", "POST"])
 def forget_recipe(recipe_id):
     """
-    Forget recipe function - removes the recipe from the 
+    Forget recipe function - removes the recipe from the
     user's cookbook.
     """
     if request.method == "POST":
