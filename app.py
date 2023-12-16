@@ -30,7 +30,7 @@ def home():
 def recipes():
     """
     Recipes view - shows list of added recipes. Shows 'edit' and 'delete'
-    buttons dependingn on whether or not the user created the recipe.
+    buttons depending on whether or not the user created the recipe.
     Shows 'save' and 'forgot' buttons depending on whether or not user
     has saved recipe to 'my_cookbook'.
     """
@@ -62,7 +62,7 @@ def search():
 def view_recipe(recipe_id):
     """
     Recipe-specific view - shows the full version
-    of the recipe the user clicks on
+    of the recipe the user clicks on.
     """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
@@ -75,7 +75,7 @@ def view_recipe(recipe_id):
 @app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
 def save_recipe(recipe_id):
     """
-    Save recipe function - saves the recipe to show in
+    Save-recipe function - saves the recipe to show in
     the 'My CookBook' tab in the user's profile.
     """
     if request.method == "POST":
@@ -92,7 +92,7 @@ def save_recipe(recipe_id):
 @app.route("/forget_recipe/<recipe_id>", methods=["GET", "POST"])
 def forget_recipe(recipe_id):
     """
-    Forget recipe function - removes the recipe from the
+    Forget-recipe function - removes the recipe from the
     user's cookbook.
     """
     if request.method == "POST":
@@ -196,7 +196,7 @@ def profile(username):
 @app.route("/sign_out")
 def sign_out():
     """
-    Sign out function - signs the user out.
+    Sign-out function - signs the user out.
     """
     # remove user from session cookies
     flash("You have been logged out", "success")
@@ -207,7 +207,7 @@ def sign_out():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     """
-    Add Recipe view - shows add recipe page and
+    Add-Recipe view - shows add-recipe page and
     functionality for adding a recipe.
     """
     if request.method == "POST":
@@ -262,7 +262,7 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     """
-    Edit Recipe view - shows edit recipe page and
+    Edit-Recipe view - shows edit-recipe page and
     functionality for editing a recipe.
     """
     if request.method == "POST":
@@ -319,7 +319,7 @@ def edit_recipe(recipe_id):
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     """
-    Delete Recipe function - delete's a recipe from the
+    Delete-Recipe function - delete's a recipe from the
     database when user clicks 'delete' button.
     """
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
