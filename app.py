@@ -36,12 +36,37 @@ def recipes():
     """
     recipes = list(mongo.db.recipes.find())
     meal_types = mongo.db.meal_types.find()
-    my_cookbook = mongo.db.users.find_one(
+    saved_recipes = mongo.db.users.find_one(
         {"username": session["user"]}).get('my_cookbook', [])
     return render_template(
         "recipes.html", recipes=recipes,
-        meal_types=meal_types, my_cookbook=my_cookbook,
+        meal_types=meal_types, saved_recipes=saved_recipes,
         current_page=url_for('recipes'))
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    """
+    Profile view - shows the user's profile, along with a
+    tab for the user's added recipes and a tab for
+    the user's saved recipes.
+    """
+    # grab the session user's username from the database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    saved_recipes = mongo.db.users.find_one(
+        {"username": session["user"]}).get('my_cookbook', [])
+    saved_recipe_ids = [ObjectId(recipe_id) for recipe_id in saved_recipes]
+    my_cookbook = mongo.db.recipes.find({'_id': {'$in': saved_recipe_ids}})
+
+    if session["user"]:
+        recipes = list(mongo.db.recipes.find())
+        return render_template(
+            "profile.html", username=username,
+            recipes=recipes, my_cookbook=my_cookbook,
+            saved_recipes=saved_recipes)
+
+    return redirect(url_for("sign_in"))
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -166,31 +191,6 @@ def sign_in():
             return redirect(url_for("sign_in"))
 
     return render_template("sign_in.html")
-
-
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    """
-    Profile view - shows the user's profile, along with a
-    tab for the user's added recipes and a tab for
-    the user's saved recipes.
-    """
-    # grab the session user's username from the database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    user = mongo.db.users.find_one(
-        {"username": session["user"]})
-    my_cookbook_ids = user.get('my_cookbook', [])
-    my_cookbook_ids = [ObjectId(recipe_id) for recipe_id in my_cookbook_ids]
-    my_cookbook = mongo.db.recipes.find({'_id': {'$in': my_cookbook_ids}})
-
-    if session["user"]:
-        recipes = list(mongo.db.recipes.find())
-        return render_template(
-            "profile.html", username=username,
-            recipes=recipes, my_cookbook=my_cookbook)
-
-    return redirect(url_for("sign_in"))
 
 
 @app.route("/sign_out")

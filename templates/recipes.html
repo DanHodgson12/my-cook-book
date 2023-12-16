@@ -68,7 +68,7 @@
                                     <i class="fa-solid fa-book"></i>
                                 <a>
                             </div>
-                            {% if recipe._id|string in my_cookbook %}
+                            {% if recipe._id|string in saved_recipes %}
                                 <div class="col s12 m6 l3">
                                     <form action="{{ url_for('forget_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}" method="POST">
                                         <button type="submit" class="waves-effect waves-light btn orange text-shadow">
