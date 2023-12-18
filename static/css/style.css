@@ -147,3 +147,21 @@ nav .sidenav-trigger {
         font-size: 2rem;
     }
 }
+
+/* Modals */
+
+.modal {
+    max-height: 50%;
+}
+
+.modal p {
+    margin: 2rem 0;
+}
+
+.modal .modal-footer {
+    height: auto;
+}
+
+.modal-footer button {
+    width: 100%;
+}

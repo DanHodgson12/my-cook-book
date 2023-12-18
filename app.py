@@ -316,14 +316,15 @@ def edit_recipe(recipe_id):
         "edit_recipe.html", recipe=recipe, meal_types=meal_types)
 
 
-@app.route("/delete_recipe/<recipe_id>")
+@app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
 def delete_recipe(recipe_id):
     """
     Delete-Recipe function - delete's a recipe from the
     database when user clicks 'delete' button.
     """
-    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-    flash("Recipe Successfully Deleted", "success")
+    if request.method == "POST":
+        mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+        flash("Recipe Successfully Deleted", "success")
     return redirect(url_for("recipes"))
 
 

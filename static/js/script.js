@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('select').formSelect();
     M.textareaAutoResize($('#ingredients'));
     $('.tabs').tabs();
+    $(".modal").modal();
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {
