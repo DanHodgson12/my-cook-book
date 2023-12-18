@@ -100,12 +100,41 @@
                                             </a>
                                         </div>
                                         <div class="col s6 m6 l3">
-                                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn red">
+                                            <!-- Delete Recipe Modal Trigger -->
+                                            <a href="#createdRecipeDelete{{ recipe._id }}" class="waves-effect waves-light btn red modal-trigger">
                                                 Delete
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </a>
                                         </div>
                                     {% endif %}
+                                </div>
+                            </div>
+                            <!-- Delete Recipe Modal -->
+                            <div id="createdRecipeDelete{{ recipe._id }}" class="modal modal-fixed-footer">
+                                <div class="modal-content">
+                                    <h4 class="center-align">Warning!</h4>
+                                    <p class="center-align">
+                                        Deleting this recipe is permanent and cannot be reversed.
+                                        <br><br>
+                                        Are you sure you want to delete?
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="row">
+                                        <div class="col s12 m4">
+                                            <button type="button" class="modal-close waves-effect waves-green btn grey">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                        <div class="col s12 m8">
+                                            <form action="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
+                                                <button type="submit" class="btn waves-effect waves-light red">
+                                                    Confirm Deletion
+                                                    <i class="fa-solid fa-trash-can"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -191,12 +220,41 @@
                                         </a>
                                     </div>
                                     <div class="col s6 m6 l3">
-                                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn red">
+                                        <!-- Delete Recipe Modal Trigger -->
+                                        <a href="#savedRecipeDelete{{ recipe._id }}" class="waves-effect waves-light btn red modal-trigger">
                                             Delete
                                             <i class="fa-solid fa-trash-can"></i>
                                         </a>
                                     </div>
                                 {% endif %}
+                            </div>
+                        </div>
+                        <!-- Delete Recipe Modal -->
+                        <div id="savedRecipeDelete{{ recipe._id }}" class="modal modal-fixed-footer">
+                            <div class="modal-content">
+                                <h4 class="center-align">Warning!</h4>
+                                <p class="center-align">
+                                    Deleting this recipe is permanent and cannot be reversed.
+                                    <br><br>
+                                    Are you sure you want to delete?
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="row">
+                                    <div class="col s12 m4">
+                                        <button type="button" class="modal-close waves-effect waves-green btn grey">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                    <div class="col s12 m8">
+                                        <form action="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
+                                            <button type="submit" class="btn waves-effect waves-light red">
+                                                Confirm Deletion
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
