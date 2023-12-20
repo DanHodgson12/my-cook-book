@@ -325,7 +325,8 @@ def delete_recipe(recipe_id):
     if request.method == "POST":
         mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
         flash("Recipe Successfully Deleted", "success")
-    return redirect(url_for("recipes"))
+    current_page = request.args.get('current_page')
+    return redirect(current_page)
 
 
 if __name__ == "__main__":
