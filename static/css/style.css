@@ -118,6 +118,16 @@ nav .sidenav-trigger {
     border: 2px solid black;
 }
 
+/* caret rotation animation, idea from
+https: //codepen.io/j_holtslander/pen/vMZGxM */
+li .collapsible-header .fa-caret-right {
+    transition: transform 0.2s ease;
+}
+
+li.active .collapsible-header .fa-caret-right {
+    transform: rotate(90deg);
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 992px) {
