@@ -2,7 +2,7 @@
 
 ![My CookBook Final Design]()
 
-Visit the deployed site [here]().
+Visit the deployed site [here](https://my-cook-book-dh-6fcf65fd1fe5.herokuapp.com/).
 
 ---
 
