@@ -13,7 +13,7 @@
                 </div>
                 <div class="col s12 m4">
                     <a href="{{ url_for('recipes') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="red darken-4 btn text-">
+                    <button type="submit" class="grey darken-1 btn text-shadow">
                         <i class="fas fa-search left"></i> Search
                     </button>
                 </div>
@@ -65,7 +65,7 @@
                             <div class="col s12 m6
                                 {% if session.user|lower == recipe.created_by|lower %}l3{% else %}l3 offset-l3{% endif %}
                                 {% if session.user %}l3{% else %}l6 offset-l3{% endif %}">
-                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn red darken-4">
+                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn grey darken-1">
                                     Full Recipe
                                     <i class="fa-solid fa-book"></i>
                                 <a>
