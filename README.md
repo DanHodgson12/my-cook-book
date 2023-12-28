@@ -14,6 +14,21 @@ Visit the deployed site [here](https://my-cook-book-dh-6fcf65fd1fe5.herokuapp.co
 
 ## Colour Scheme
 
+![My CookBook Colour Scheme](static/images/mycookbook_colour_scheme.png)
+
+The primary colours used for this application are as follows:
+
+- Dark Red (#8B0000) - for the navbar, collapsible headers, and the large 'Sign In' and 'Register' buttons.
+- Snow (#F9F4F5) - for the background to each page.
+- Gray (#757575) - for all small buttons*.
+
+*Other secondary colours are used for specific action buttons:
+
+- Red (#F44336) - for the 'Delete' button.
+- Light Blue (#42A5F5) - for the 'Edit' button.
+- Green (#4CAF50) - for the 'Save' button.
+- Orange (#FF9800) - for the 'Forget' button.
+
 ## Typography
 
 The font-families used for this application are 'Nunito Sans' for the headers and 'Roboto' for the main body of text, with sans-serif as a fallback for both.
