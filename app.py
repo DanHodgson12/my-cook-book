@@ -49,8 +49,7 @@ def recipes():
 
     return render_template(
         "recipes.html", recipes=recipes,
-        meal_types=meal_types,
-        current_page=url_for('recipes'))
+        meal_types=meal_types, current_page=url_for('recipes'))
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
