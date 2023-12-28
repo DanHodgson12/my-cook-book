@@ -36,11 +36,20 @@ def recipes():
     """
     recipes = list(mongo.db.recipes.find())
     meal_types = mongo.db.meal_types.find()
-    saved_recipes = mongo.db.users.find_one(
-        {"username": session["user"]}).get('my_cookbook', [])
+
+    user_session = session.get("user")
+
+    if user_session is not None:
+        saved_recipes = mongo.db.users.find_one(
+            {"username": session["user"]}).get('my_cookbook', [])
+        return render_template(
+            "recipes.html", recipes=recipes,
+            meal_types=meal_types, saved_recipes=saved_recipes,
+            current_page=url_for('recipes'))
+
     return render_template(
         "recipes.html", recipes=recipes,
-        meal_types=meal_types, saved_recipes=saved_recipes,
+        meal_types=meal_types,
         current_page=url_for('recipes'))
 
 
