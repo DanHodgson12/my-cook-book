@@ -60,6 +60,11 @@ nav .sidenav-trigger {
     margin: 0 5px;
 }
 
+#chef-hat img {
+    height: -webkit-fill-available;
+    margin: 5px;
+}
+
 /* Flashes */
 
 .flashes {
