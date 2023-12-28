@@ -16,6 +16,9 @@ Visit the deployed site [here](https://my-cook-book-dh-6fcf65fd1fe5.herokuapp.co
 
 ## Typography
 
+The font-families used for this application are 'Nunito Sans' for the headers and 'Roboto' for the main body of text, with sans-serif as a fallback for both.
+The inspiration for this font pairing came from [this website](https://www.fontpair.co/all).
+
 ## Wireframes
 
 # Features
