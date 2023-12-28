@@ -45,6 +45,7 @@ The inspiration for this font pairing came from [this website](https://www.fontp
 - [HTML](https://en.wikipedia.org/wiki/HTML)
 - [CSS](https://en.wikipedia.org/wiki/CSS)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ## Frameworks, Libraries & Programs
 
