@@ -41,6 +41,9 @@ Other than the above, there were a few legitimate errors/warnings with the HTML 
 
 ### CSS
 
+The W3C CSS Validator returned no errors in the code.
+![CSS Validation Image](static/images/css-validation.png)
+
 ### Python
 
 ### JavaScript
