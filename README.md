@@ -10,7 +10,38 @@ Visit the deployed site [here](https://my-cook-book-dh-6fcf65fd1fe5.herokuapp.co
 
 ## Project Goals
 
+- The application can be easily navigated and understood.
+- Clearly explains the concept of the application.
+- Clearly explains how to use the application.
+- Contains clear imagery and content.
+- Provides interactivity in the form of clickable elements.
+- Provides feedback when the user performs a specific function.
+- Provides users with the ability to create their own profile.
+- Provides users with the ability to 'Create' their own recipe.
+- Provides users with the ability to access a wide range of recipes and view their full content ('Read').
+- Provides users with the ability to edit ('Update') recipes they have created.
+- Provides users with the ability to 'Delete' recipes they have created.
+- Provides users with the ability to search all recipes depending on keyword.
+- Provides users with the ability to save recipes and add them to their 'CookBook'.
+- Provides users with the ability to remove recipes from their 'CookBook'.
+- The game can be played on a variety of screen sizes.
+
 ## User Stories
+
+- As a user, I want to be able to navigate the application easily, so that I can start using the application as soon as possible.
+- As a user, I want to know what the application is about, so that I can understand the concept behind it.
+- As a user, I want to see the application's instructions, so that I can understand how to use it.
+- As a user, I want to be able to interact with the application, so that I can have a enjoyable experience.
+- As a user, I want to be given feedback when I interact with the application, so I know when an action I perform has been registered.
+- As a user, I want to be able to create my own profile, so I can begin using the application to its fullest.
+- As a user, I want to be able to add my own recipes, so I can share my knowledge with others.
+- As a user, I want to be able to access a wide range of recipes, so that I can find something that I like.
+- As a user, I want to be able to edit my own recipes, so that I can make changes to the recipe or fix errors if needed.
+- As a user, I want to be able to delete my own recipes, so that I can remove my information if I change my mind.
+- As a user, I want to be able to search for a specific recipe, so that I can see which recipes suit my preferences.
+- As a user, I want to be able to save recipes to my profile, so that I can view only the recipes that matter to me.
+- As a user, I want to be able to remove recipes from my profile, so that I can view only the recipes that matter to me.
+- As a user, I want the web application to be responsive, so that I can use the application on a variety of screen sizes.
 
 ## Colour Scheme
 
