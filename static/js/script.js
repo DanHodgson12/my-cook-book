@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    $('.sidenav').sidenav({edge: "right"});
-    $('.collapsible').collapsible();
-    $('select').formSelect();
-    M.textareaAutoResize($('#ingredients'));
-    $('.tabs').tabs();
+    $(".sidenav").sidenav({edge: "right"});
+    $(".collapsible").collapsible();
+    $("select").formSelect();
+    M.textareaAutoResize($("#ingredients"));
+    $(".tabs").tabs();
     $(".modal").modal();
 
     validateMaterializeSelect();
