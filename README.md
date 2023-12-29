@@ -69,6 +69,44 @@ The inspiration for this font pairing came from [this website](https://www.fontp
 
 # Features
 
+- The application was designed from a mobile-first perspective.
+- The application is responsive on all screen sizes:
+  - This allows the user to [view the website on a variety of screen sizes](#user-stories).
+
+## Navbar
+
+There are two different navbars depending on whether or not a user is logged in. However, the following remain the same on both:
+
+### User Navbar
+
+![User Navbar](static/images/navbar-user.png)
+
+The User Navbar consists of:
+
+- __Logo/Title__ - These are both clickable elements and take the user to the Home page.
+- __Home__ - This takes the user back to the Home page where information about the application is shown.
+- __Recipes__ - This takes the user to the section where all recipes are listed and the user can search for recipes.
+- __Add Recipe__ - This takes the user to a page where they can add a recipe. 
+  - _Users won't be able to add/edit/delete a recipe if they are not logged in._
+- __Sign Out__ - This signs the user out of their account.
+- __Profile__ - This takes the user to their profile, where they can see recipes they have created as well as recipes they have saved.
+
+### Non-User Navbar
+
+![Non-User Navbar](static/images/navbar-non-user.png)
+
+The Non-User Navbar consists of:
+
+- __Logo/Title__ - These are both clickable elements and take the user to the Home page.
+- __Home__ - This takes the user back to the Home page where information about the application is shown.
+- __Recipes__ - This takes the user to the section where all recipes are listed and the user can search for recipes.
+- __Sign In__ - This takes the user to the Sign In page. 
+  - An option to Register is provided underneath the Sign In section if no account is found.
+- __Register__ - This takes the user to the Register page. 
+  - An option to Sign In is provided underneath the Register section if no account is found.
+
+
+
 # Technologies Used
 
 ## Languages
