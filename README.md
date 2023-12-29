@@ -107,6 +107,19 @@ The Non-User Navbar consists of:
 - __Register__ - This takes the user to the Register page.
   - An option to Sign In is provided underneath the Register section if no account is found.
 
+## Home
+
+![Home](static/images/home-page.png)
+
+The Home page consist of the following:
+
+- Heading.
+- Information about the application and how to use it.
+- Several clickable buttons which link to their respective pages:
+  - __Sign In__ - This takes the user to the Sign In page.
+  - __Register__ - This takes the user to the Register page.
+  - __Recipes__ - This takes the user to the section where all recipes are listed and the user can search for recipes.
+
 # Technologies Used
 
 ## Languages
