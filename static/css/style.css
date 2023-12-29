@@ -61,7 +61,7 @@ nav .sidenav-trigger {
 }
 
 #chef-hat img {
-    height: -webkit-fill-available;
+    height: 50px;
     margin: 5px;
     vertical-align: top;
     border-radius: 5px;
