@@ -202,7 +202,7 @@ To clone the repository:
 ## Content
 
 - All content was written by the developer.
-- Example recipes were taken from [Jamie Oliver's recipe website](https://www.jamieoliver.com/recipes/).
+- Example recipes were taken from the [BBC Food Recipe website](https://www.bbc.co.uk/food/recipes/).
 
 ## Media
 
