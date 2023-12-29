@@ -21,7 +21,7 @@
         <nav>
             <div class="nav-wrapper text-shadow red darken-4">
                 <a href="{{ url_for('home') }}" id="chef-hat">
-                    <img src="static/images/chefshatfinal.png" alt="Image of a chef's hat.">
+                    <img src="{{ url_for('static', filename='images/chefshatfinal.png') }}" alt="Image of a chef's hat.">
                 </a>
                 <a href="{{ url_for('home') }}" class="brand-logo">My CookBook</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
