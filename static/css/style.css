@@ -83,6 +83,22 @@ nav .sidenav-trigger {
     background-color: #36b136;
 }
 
+/* Search Bar */
+
+.search {
+    margin-bottom: 0;
+}
+
+.search .input-field {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.search a,
+.search button {
+    padding: 0 10px;
+}
+
 /* Collapsibles/Recipe Container */
 
 .recipe-container {

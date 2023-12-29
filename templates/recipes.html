@@ -5,13 +5,13 @@
 
     <div class="row card-panel grey lighten-5">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
+            <div class="row search">
+                <div class="col s12 l8 input-field">
                     <i class="fas fa-search prefix red-text text-darken-4"></i>
                     <input type="text" name="search" id="search" minlength="3" class="validate" required>
                     <label for="search">Search Recipes</label>
                 </div>
-                <div class="col s12 m4">
+                <div class="col s12 l4">
                     <a href="{{ url_for('recipes') }}" class="red btn text-shadow">Reset</a>
                     <button type="submit" class="grey darken-1 btn text-shadow">
                         <i class="fas fa-search left"></i> Search
