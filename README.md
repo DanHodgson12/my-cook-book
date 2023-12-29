@@ -232,7 +232,7 @@ A large amount of testing was undertaken throughout the project in order to asse
 
 Friends and family also participated in testing the application's functionality and expressed any concerns or ideas they had with function, layout and user experience.
 
-Please see a detailed breakdown of the testing carried out for this application in [TESTING.md]().
+Please see a detailed breakdown of the testing carried out for this application in [TESTING.md](TESTING.md).
 
 # Finished Product
 
