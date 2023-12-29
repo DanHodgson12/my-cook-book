@@ -156,6 +156,11 @@ li.active .collapsible-header .fa-caret-right {
     transform: rotate(90deg);
 }
 
+.ingredients li,
+.method li {
+    margin: 8px 0;
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 992px) {
