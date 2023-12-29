@@ -63,6 +63,8 @@ nav .sidenav-trigger {
 #chef-hat img {
     height: -webkit-fill-available;
     margin: 5px;
+    vertical-align: top;
+    border-radius: 5px;
 }
 
 /* Flashes */
