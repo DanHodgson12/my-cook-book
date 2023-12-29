@@ -120,6 +120,74 @@ The Home page consist of the following:
   - __Register__ - This takes the user to the Register page.
   - __Recipes__ - This takes the user to the section where all recipes are listed and the user can search for recipes.
 
+## Recipes
+
+![Recipes](static/images/recipes.png)
+
+This is the main page of the application. Here users will be able to search for any recipes stored in the application, perform actions such as saving, editing, deleting and viewing the full versions of the recipes.
+
+### Search Bar
+
+![Search Bar](static/images/search-bar.png)
+
+- This feature allows the user to search for a specific recipe using keywords they type into the search bar.
+- The __Reset__ button will cancel the search and clear the search bar.
+- Users can click __Search__ or simply hit Enter on their keyboard.
+- If no results were found from the keyword/s the user has searched for, the following message appears:
+  - __"No Recipes Found"__
+
+### Recipe Collapsible
+
+![Recipe Collapsible](static/images/recipe-collapsible.png)
+
+These collapsible elements are where each recipe is displayed from the database. Each collapsible consists of the following:
+
+#### Header
+
+- Includes the recipe name.
+- Is a clickable element, which expands or collapses the body of the element.
+
+#### Body
+
+- An image of the recipe (if provided by the user when the recipe has been added).
+- A description of the recipe.
+- Meal type, i.e 'Lunch', 'Dinner', etc.
+- Time to prepare and cook the recipe.
+- Number of servings.
+- Creator of the recipe.
+
+#### Action Buttons
+
+There are a total of 5 action buttons that will be displayed on the collapsible, depending on a number of factors (please see below for details). However, here are the main functions of each button:
+
+- __Full Recipe__ - Takes the user to a page displaying the full recipe, including the _Ingredients_ and _Method_.
+- __Save Recipe__ - Adds the recipe to the user's CookBook, which displays in the _My CookBook_ section of the user's profile.
+- __Forget Recipe__ - Removes the recipe from the user's CookBook.
+- __Edit__ - Takes the user to the Edit Recipe page where they can edit the recipe.
+- __Delete__ - Once clicked, opens a modal asking the user if they're sure they want to delete the recipe.
+  - The __Delete__ button inside the modal actually performs the function to delete the recipe from the database.
+  - ![Delete Modal](static/images/delete-modal.png)
+
+If the User __is not__ signed in, the following will be displayed:
+
+![Collapsible Buttons 1](static/images/c-buttons-1.png)
+
+If the User __is__ signed in, __did not__ create the recipe and __has not__ saved the recipe, the following will be displayed:
+
+![Collapsible Buttons 2](static/images/c-buttons-2.png)
+
+If the User __is__ signed in, __did not__ create the recipe and __has__ saved the recipe, the following will be displayed:
+
+![Collapsible Buttons 3](static/images/c-buttons-3.png)
+
+If the User __is__ signed in, __did__ create the recipe and __has not__ saved the recipe, the following will be displayed:
+
+![Collapsible Buttons 4](static/images/c-buttons-4.png)
+
+If the User __is__ signed in, __did__ create the recipe and __has__ saved the recipe, the following will be displayed:
+
+![Collapsible Buttons 5](static/images/c-buttons-5.png)
+
 # Technologies Used
 
 ## Languages
