@@ -42,9 +42,12 @@ Other than the above, there were a few legitimate errors/warnings with the HTML 
 ### CSS
 
 The W3C CSS Validator returned no errors in the code.
-![CSS Validation Image](static/images/css-validation.png)
+![CSS Validation](static/images/css-validation.png)
 
 ### Python
+
+The CI Python Linter returned no errors in the code.
+![Python Validation](static/images/python-validation.png)
 
 ### JavaScript
 
