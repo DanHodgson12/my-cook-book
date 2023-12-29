@@ -59,26 +59,28 @@
     </div>
 
     <div class="row collapsible-buttons">
-        {% if recipe._id|string in saved_recipes %}
-            <div class="col s12 m4">
-                <form action="{{ url_for('forget_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}"
-                    method="POST">
-                    <button type="submit" class="waves-effect waves-light btn orange text-shadow">
-                        Forget Recipe
-                        <i class="fa-solid fa-eraser"></i>
-                    </button>
-                </form>
-            </div>
-        {% else %}
-            <div class="col s12 m4">
-                <form action="{{ url_for('save_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}"
-                    method="POST">
-                    <button type="submit" class="waves-effect waves-light btn green text-shadow">
-                        Save Recipe
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                </form>
-            </div>
+        {% if session.user %}
+            {% if recipe._id|string in saved_recipes %}
+                <div class="col s12 m4">
+                    <form action="{{ url_for('forget_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}"
+                        method="POST">
+                        <button type="submit" class="waves-effect waves-light btn orange text-shadow">
+                            Forget Recipe
+                            <i class="fa-solid fa-eraser"></i>
+                        </button>
+                    </form>
+                </div>
+            {% else %}
+                <div class="col s12 m4">
+                    <form action="{{ url_for('save_recipe', current_page=url_for('recipes'), recipe_id=recipe._id) }}"
+                        method="POST">
+                        <button type="submit" class="waves-effect waves-light btn green text-shadow">
+                            Save Recipe
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </form>
+                </div>
+            {% endif %}
         {% endif %}
         {% if session.user|lower == recipe.created_by|lower %}
             <div class="col s6 m4">
