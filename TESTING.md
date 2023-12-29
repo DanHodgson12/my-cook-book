@@ -18,6 +18,8 @@
 
 The [W3C Markup Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) services were used to check for any code errors or misuse of syntax/elements in the HTML & CSS.
 
+The [JSHint](https://jshint.com/) service was used to check for any code errors or misuse of syntax in the JavaScript.
+
 The [CI Python Linter](https://pep8ci.herokuapp.com/) service was used to check for any linting errors in the Python code.
 
 ### HTML
@@ -44,11 +46,18 @@ Other than the above, there were a few legitimate errors/warnings with the HTML 
 The W3C CSS Validator returned no errors in the code.
 ![CSS Validation](static/images/css-validation.png)
 
+### JavaScript
+
+The JSHint Validation returned a few errors in the code for undefined variables:
+
+- `$` - This was ignored as it is required for functions using jQuery.
+- `M` - This was ignored as it is used for initialisation whilst using Materialize.
+
+![JSHint Validation](static/images/jshint-validation.png)
+
 ### Python
 
 The CI Python Linter returned no errors in the code.
 ![Python Validation](static/images/python-validation.png)
-
-### JavaScript
 
 ## Lighthouse Report
