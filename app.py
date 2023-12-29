@@ -52,45 +52,6 @@ def recipes():
         meal_types=meal_types, current_page=url_for('recipes'))
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    """
-    Profile view - shows the user's profile, along with a
-    tab for the user's added recipes and a tab for
-    the user's saved recipes.
-    """
-    # grab the session user's username from the database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    saved_recipes = mongo.db.users.find_one(
-        {"username": session["user"]}).get('my_cookbook', [])
-    saved_recipe_ids = [ObjectId(recipe_id) for recipe_id in saved_recipes]
-    my_cookbook = mongo.db.recipes.find({'_id': {'$in': saved_recipe_ids}})
-
-    if session["user"]:
-        recipes = list(mongo.db.recipes.find())
-        return render_template(
-            "profile.html", username=username,
-            recipes=recipes, my_cookbook=my_cookbook,
-            saved_recipes=saved_recipes)
-
-    return redirect(url_for("sign_in"))
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    """
-    Search function - allows user to search for recipes based on words
-    in the name or ingredients of the recipe.
-    """
-    search = request.form.get("search")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": search}}))
-    meal_types = mongo.db.meal_types.find()
-    return render_template(
-        "recipes.html", recipes=recipes,
-        meal_types=meal_types, current_page=url_for('recipes'))
-
-
 @app.route("/recipes/<recipe_id>")
 def view_recipe(recipe_id):
     """
@@ -103,113 +64,6 @@ def view_recipe(recipe_id):
         "view_recipe.html", recipe=recipe,
         meal_types=meal_types, recipe_id=recipe_id,
         current_page=url_for('view_recipe', recipe_id=recipe_id))
-
-
-@app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
-def save_recipe(recipe_id):
-    """
-    Save-recipe function - saves the recipe to show in
-    the 'My CookBook' tab in the user's profile.
-    """
-    if request.method == "POST":
-        mongo.db.users.update_one(
-            {"username": session["user"]},
-            {"$addToSet": {"my_cookbook": recipe_id}}
-        )
-        flash("Recipe Successfully Saved", "success")
-
-    current_page = request.args.get('current_page')
-    return redirect(current_page)
-
-
-@app.route("/forget_recipe/<recipe_id>", methods=["GET", "POST"])
-def forget_recipe(recipe_id):
-    """
-    Forget-recipe function - removes the recipe from the
-    user's cookbook.
-    """
-    if request.method == "POST":
-        mongo.db.users.update_one(
-            {"username": session["user"]},
-            {"$pull": {"my_cookbook": recipe_id}}
-        )
-        flash("Recipe Successfully Removed From CookBook", "success")
-
-    current_page = request.args.get('current_page')
-    return redirect(current_page)
-
-
-@app.route("/register", methods=["GET", "POST"])
-def register():
-    """
-    Register view - shows the register page and
-    functionality to add a new user.
-    """
-    if request.method == "POST":
-        # check if username already exists in database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if existing_user:
-            flash("Username already exists", "error")
-            return redirect(url_for("register"))
-
-        new_user = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "my_cookbook": []
-        }
-
-        mongo.db.users.insert_one(new_user)
-
-        # put the new_user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful", "success")
-        return redirect(url_for("profile", username=session["user"]))
-
-    return render_template("register.html")
-
-
-@app.route("/sign_in", methods=["GET", "POST"])
-def sign_in():
-    """
-    Sign-in view - shows the sign-in page and
-    functionality to sign the user in.
-    """
-    if request.method == "POST":
-        # check if username already exists in database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if existing_user:
-            # ensure hashed password matches user input
-            if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
-                    request.form.get("username")), "success")
-                return redirect(url_for("profile", username=session["user"]))
-            else:
-                # invalid password match
-                flash("Incorrect Username and/or Password", "error")
-                return redirect(url_for("sign_in"))
-        else:
-            # username doesn't exist
-            flash("Incorrect Username and/or Password", "error")
-            return redirect(url_for("sign_in"))
-
-    return render_template("sign_in.html")
-
-
-@app.route("/sign_out")
-def sign_out():
-    """
-    Sign-out function - signs the user out.
-    """
-    # remove user from session cookies
-    flash("You have been logged out", "success")
-    session.pop("user")
-    return redirect(url_for("sign_in"))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -335,6 +189,152 @@ def delete_recipe(recipe_id):
         flash("Recipe Successfully Deleted", "success")
     current_page = request.args.get('current_page')
     return redirect(current_page)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """
+    Search function - allows user to search for recipes based on words
+    in the name or ingredients of the recipe.
+    """
+    search = request.form.get("search")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": search}}))
+    meal_types = mongo.db.meal_types.find()
+    return render_template(
+        "recipes.html", recipes=recipes,
+        meal_types=meal_types, current_page=url_for('recipes'))
+
+
+@app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
+def save_recipe(recipe_id):
+    """
+    Save-recipe function - saves the recipe to show in
+    the 'My CookBook' tab in the user's profile.
+    """
+    if request.method == "POST":
+        mongo.db.users.update_one(
+            {"username": session["user"]},
+            {"$addToSet": {"my_cookbook": recipe_id}}
+        )
+        flash("Recipe Successfully Saved", "success")
+
+    current_page = request.args.get('current_page')
+    return redirect(current_page)
+
+
+@app.route("/forget_recipe/<recipe_id>", methods=["GET", "POST"])
+def forget_recipe(recipe_id):
+    """
+    Forget-recipe function - removes the recipe from the
+    user's cookbook.
+    """
+    if request.method == "POST":
+        mongo.db.users.update_one(
+            {"username": session["user"]},
+            {"$pull": {"my_cookbook": recipe_id}}
+        )
+        flash("Recipe Successfully Removed From CookBook", "success")
+
+    current_page = request.args.get('current_page')
+    return redirect(current_page)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    """
+    Register view - shows the register page and
+    functionality to add a new user.
+    """
+    if request.method == "POST":
+        # check if username already exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists", "error")
+            return redirect(url_for("register"))
+
+        new_user = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "my_cookbook": []
+        }
+
+        mongo.db.users.insert_one(new_user)
+
+        # put the new_user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful", "success")
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("register.html")
+
+
+@app.route("/sign_in", methods=["GET", "POST"])
+def sign_in():
+    """
+    Sign-in view - shows the sign-in page and
+    functionality to sign the user in.
+    """
+    if request.method == "POST":
+        # check if username already exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # ensure hashed password matches user input
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")), "success")
+                return redirect(url_for("profile", username=session["user"]))
+            else:
+                # invalid password match
+                flash("Incorrect Username and/or Password", "error")
+                return redirect(url_for("sign_in"))
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password", "error")
+            return redirect(url_for("sign_in"))
+
+    return render_template("sign_in.html")
+
+
+@app.route("/sign_out")
+def sign_out():
+    """
+    Sign-out function - signs the user out.
+    """
+    # remove user from session cookies
+    flash("You have been logged out", "success")
+    session.pop("user")
+    return redirect(url_for("sign_in"))
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    """
+    Profile view - shows the user's profile, along with a
+    tab for the user's added recipes and a tab for
+    the user's saved recipes.
+    """
+    # grab the session user's username from the database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    saved_recipes = mongo.db.users.find_one(
+        {"username": session["user"]}).get('my_cookbook', [])
+    saved_recipe_ids = [ObjectId(recipe_id) for recipe_id in saved_recipes]
+    my_cookbook = mongo.db.recipes.find({'_id': {'$in': saved_recipe_ids}})
+
+    if session["user"]:
+        recipes = list(mongo.db.recipes.find())
+        return render_template(
+            "profile.html", username=username,
+            recipes=recipes, my_cookbook=my_cookbook,
+            saved_recipes=saved_recipes)
+
+    return redirect(url_for("sign_in"))
 
 
 if __name__ == "__main__":
