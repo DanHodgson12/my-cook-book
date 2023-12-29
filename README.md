@@ -212,6 +212,7 @@ To clone the repository:
 
 - [Materialize](https://materializecss.com/getting-started.html) was used throughout to help with responsiveness and styling purposes.
 - [W3Schools](https://www.w3schools.com/) & [Stack Overflow](https://stackoverflow.co/teams/) were consulted on a regular basis to help overcome roadblocks in the developer's coding knowledge.
+- A user's contribution to [CodePen](https://codepen.io/j_holtslander/pen/vMZGxM) was used as inspiration for the rotating caret animation for the collapsible elements on the Recipes and Profile pages.
 
 # Acknowledgements
 
