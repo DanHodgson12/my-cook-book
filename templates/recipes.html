@@ -65,7 +65,7 @@
                             <div class="col s12 m6
                                 {% if session.user|lower == recipe.created_by|lower %}l3{% else %}l3 offset-l3{% endif %}
                                 {% if session.user %}l3{% else %}l6 offset-l3{% endif %}">
-                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn grey darken-1">
+                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" target="_blank" class="waves-effect waves-light btn grey darken-1">
                                     Full Recipe
                                     <i class="fa-solid fa-book"></i>
                                 <a>
