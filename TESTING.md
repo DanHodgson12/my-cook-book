@@ -172,6 +172,13 @@ Newly added recipe displays as a collapsible element on Recipes page with approp
 
 ### Edit Recipe
 
+Outcome | Pass/Fail
+--- | ---
+All form fields render current recipe information when page is loaded as expected | Pass
+All form fields maintain the same validation requirements as Add Recipe as expected | Pass
+Submitting form with __Edit Recipe__ button updates the recipes current information with new information in database | Pass
+__Cancel__ button prevents recipe's information from changing, even if information has been adjusted before submitting form | Pass
+
 ### Delete Recipe
 
 ### Save Recipe
