@@ -30,16 +30,15 @@ Other than the above, there were a few legitimate errors/warnings with the HTML 
 
 #### base.html
 
-![base.html](static/images/html-validation-base.png)
+![base.html](static/images/html-validation-base-page.png)
 
-1. This is part of the Mobile Collapse Sidenav. This error was ignored as the sidenav performed without issue.
-2. This section element contained the flashed messages provided using Jinja templating language. This warning was ignored as the flashed messages performed without issue.
+- This section element contained the flashed messages provided using Jinja templating language. This warning was ignored as the flashed messages performed without issue.
 
 #### add_recipe.html & edit_recipe.html
 
 ![add_recipe.html & edit_recipe.html](static/images/html-validation-add-edit-recipe.png)
 
-1. These errors showed up for both pages. The code targeted is being used in placeholder text for a text area - the `&#10` makes each piece of text appear on a new line. These errors were ignored as the code performed without issue.
+- These errors showed up for both pages. The code targeted is being used in placeholder text for a text area - the `&#10` makes each piece of text appear on a new line. These errors were ignored as the code performed without issue.
 
 ### CSS
 
