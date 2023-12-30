@@ -198,6 +198,28 @@ If the User __is__ signed in, __did__ create the recipe and __has__ saved the re
 
 ![Collapsible Buttons 5](static/images/c-buttons-5.png)
 
+## View/Full Recipe
+
+![View/Full Recipe](static/images/view-recipe.png)
+
+Clicking the __Full Recipe__ button on a recipe collapsible (on the 'Recipes' page or the user's profile) takes the user to a new page - in a new window - where the full version of the recipe is displayed. The information displayed is as follows:
+
+- Recipe Name
+- Recipe Image (if provided)
+- Recipe Description
+- Recipe Info:
+    - Meal type, i.e 'Lunch', 'Dinner', etc.
+    - Time to prepare and cook the recipe.
+    - Number of servings.
+    - Creator of the recipe.
+- Recipe Ingredients
+- Recipe Method
+- Action Buttons:
+    - __Save Recipe__ - If __not__ already saved to the user's CookBook.
+    - __Forget Recipe__ - If already saved to the user's CookBook.
+    - __Edit__ - If created by the user.
+    - __Delete__ - If created by the user.
+
 # Technologies Used
 
 ## Languages
