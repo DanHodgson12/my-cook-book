@@ -26,6 +26,8 @@ Microsoft Edge | No appearance, responsiveness or functionality issues | Pass
   
 ### Device Compatibility
 
+The web application was tested across a wide variety of devices using [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) & [Responsive Design Checker](https://www.responsivedesignchecker.com/) - no appearance, responsiveness or functionality issues were found.
+
 ## Common Elements Testing
 
 ### Known Bugs
