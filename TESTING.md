@@ -181,6 +181,12 @@ __Cancel__ button prevents recipe's information from changing, even if informati
 
 ### Delete Recipe
 
+Outcome | Pass/Fail
+--- | ---
+Modals are opened upon clicking any __Delete__ button across application to prevent accidental deletion | Pass
+Delete function successfully removes recipe from database and is no longer displayed anywhere across application | Pass
+If recipe has been saved to user's CookBook, the recipe's ID is also removed from user's data in database | Pass
+
 ### Save Recipe
 
 ### Forget Recipe
