@@ -125,6 +125,10 @@ Recipes button takes user to Recipes page as expected | Pass
 
 ### Sign Out
 
+Outcome | Pass/Fail
+--- | ---
+Sign Out nav link signs user out and displays correct flashed message as expected | Pass
+
 ### Register
 
 ### Profile
