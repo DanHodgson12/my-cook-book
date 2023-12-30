@@ -244,6 +244,17 @@ Submitting the form creates a new object/entry in the 'recipes' collection in th
 
 The recipe-creator's username is assigned to the recipe, which is used to display the recipe in the user's 'My Recipes' tab in their profile.
 
+## Edit Recipe
+
+![Edit Recipe](static/images/edit-recipe.png)
+
+Clicking the 'Edit' button on a recipe collapsible, or the full version of the recipe, opens the 'edit_recipe' page. This page displays a form similar to the 'add_recipe' page, with a few changes:
+
+- Form fields are prefilled with the recipe's information
+- __Cancel__ button wipes any changes made to the form before submission
+- __Edit Recipe__ button submits the form with the new changes
+    - The recipe in the database is updated with any new information but retains any unchanged information
+
 # Technologies Used
 
 ## Languages
