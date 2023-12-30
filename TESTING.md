@@ -102,6 +102,13 @@ Profile | Takes user to their profile as expected | Pass
 
 ### Home
 
+Outcome | Pass/Fail
+--- | ---
+Text displayed clearly with no formatting issues | Pass
+Sign In button takes user to Sign In page as expected | Pass
+Register button takes user to Register page as expected | Pass
+Recipes button takes user to Recipes page as expected | Pass
+
 ### Recipes
 
 ### Add Recipe
