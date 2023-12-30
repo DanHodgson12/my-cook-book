@@ -69,7 +69,8 @@ Microsoft Edge | No appearance, responsiveness or functionality issues | Pass
   
 ### Device Compatibility
 
-The web application was tested across a wide variety of devices using [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) & [Responsive Design Checker](https://www.responsivedesignchecker.com/) - no appearance, responsiveness or functionality issues were found.
+The web application was tested across a wide variety of devices using [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) & [Responsive Design Checker](https://www.responsivedesignchecker.com/). 
+- No appearance, responsiveness or functionality issues were found.
 
 ## Common Elements Testing
 
@@ -100,6 +101,8 @@ Sign Out | Signs the user out as expected | Pass
 Register | Takes user to the Register page as expected | Pass
 Profile | Takes user to their profile as expected | Pass
 
+---
+
 ### Home
 
 Outcome | Pass/Fail
@@ -108,6 +111,8 @@ Text displayed clearly with no formatting issues | Pass
 Sign In button takes user to Sign In page as expected | Pass
 Register button takes user to Register page as expected | Pass
 Recipes button takes user to Recipes page as expected | Pass
+
+---
 
 ### Recipes
 
@@ -141,6 +146,8 @@ Successfully renders recipes related to keyword or keywords | Pass
 __Cancel__ button clears search bar as expected | Pass
 __Search__ button executes search function as expected | Pass
 
+---
+
 ### View/Full Recipe
 
 #### Content
@@ -161,6 +168,8 @@ Forget Recipe | Successfully removes recipe from 'My CookBook' in user's profile
 Edit | Takes user to the Edit Recipe page as expected | Pass
 Delete | Opens warning modal with option to cancel or confirm deletion as expected | Pass
 
+---
+
 ### Add Recipe
 
 Outcome | Pass/Fail
@@ -170,6 +179,8 @@ An animation and message for validation displays if incorrect length or format o
 __Add Recipe__ button at bottom of form successfully creates new recipe in database | Pass
 Newly added recipe displays as a collapsible element on Recipes page with appropriate information and action buttons | Pass
 
+---
+
 ### Edit Recipe
 
 Outcome | Pass/Fail
@@ -178,6 +189,7 @@ All form fields render current recipe information when page is loaded as expecte
 All form fields maintain the same validation requirements as Add Recipe as expected | Pass
 Submitting form with __Edit Recipe__ button updates the recipes current information with new information in database | Pass
 __Cancel__ button prevents recipe's information from changing, even if information has been adjusted before submitting form | Pass
+---
 
 ### Delete Recipe
 
@@ -187,6 +199,9 @@ Modals are opened upon clicking any __Delete__ button across application to prev
 Delete function successfully removes recipe from database and is no longer displayed anywhere across application | Pass
 If recipe has been saved to user's CookBook, the recipe's ID is also removed from user's data in database | Pass
 
+
+---
+
 ### Save Recipe
 
 Outcome | Pass/Fail
@@ -194,12 +209,16 @@ Outcome | Pass/Fail
 Adds ID of recipe to user object in database as expected | Pass
 Successfully renders recipe in 'My CookBook' tab in user's profile | Pass
 
+---
+
 ### Forget Recipe
 
 Outcome | Pass/Fail
 --- | ---
 Removes ID of recipe from user object in database as expected | Pass
 Successfully removes recipe from 'My CookBook' tab in user's profile | Pass
+
+---
 
 ### Sign In
 
@@ -214,11 +233,15 @@ Submitting the form with incorrect information displays a warning flash message 
 Warning flash message indicates either Username or Password incorrect | Pass
 Register button in reminder underneath Sign In form takes user to the Register page as expected | Pass
 
+---
+
 ### Sign Out
 
 Outcome | Pass/Fail
 --- | ---
 Sign Out nav link signs user out and displays correct flashed message as expected | Pass
+
+---
 
 ### Register
 
@@ -233,6 +256,8 @@ Submitting the form with correctly formatted information displays the appropriat
 Register functionality successfully hashes the user's password and displays as encrypted in the database | Pass
 Sign In button in reminder underneath Register form takes user to the Register page as expected | Pass
 
+---
+
 ### Profile
 
 Outcome | Pass/Fail
@@ -243,9 +268,13 @@ Collapsibles in 'My Recipes' tab rendered identically to those on Recipes page a
 Renders user's saved recipes in 'My CookBook' tab as expected | Pass
 Collapsibles in 'My CookBook' tab rendered identically to those on Recipes page as expected | Pass
 
+---
+
 ### Known Bugs
 
 There are no known bugs with the web application.
+
+---
 
 ## Code Validation
 
