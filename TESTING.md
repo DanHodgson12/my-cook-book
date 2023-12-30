@@ -14,6 +14,8 @@
 
 ### Known Bugs
 
+There are no known bugs with the web application.
+
 ## Code Validation
 
 The [W3C Markup Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) services were used to check for any code errors or misuse of syntax/elements in the HTML & CSS.
