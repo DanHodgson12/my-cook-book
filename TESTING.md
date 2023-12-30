@@ -189,7 +189,17 @@ If recipe has been saved to user's CookBook, the recipe's ID is also removed fro
 
 ### Save Recipe
 
+Outcome | Pass/Fail
+--- | ---
+Adds ID of recipe to user object in database as expected | Pass
+Successfully renders recipe in 'My CookBook' tab in user's profile | Pass
+
 ### Forget Recipe
+
+Outcome | Pass/Fail
+--- | ---
+Removes ID of recipe from user object in database as expected | Pass
+Successfully removes recipe from 'My CookBook' tab in user's profile | Pass
 
 ### Sign In
 
