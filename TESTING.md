@@ -163,6 +163,13 @@ Delete | Opens warning modal with option to cancel or confirm deletion as expect
 
 ### Add Recipe
 
+Outcome | Pass/Fail
+--- | ---
+An animation and message for validation displays if no text entered in required fields | Pass
+An animation and message for validation displays if incorrect length or format of information entered in all fields | Pass
+__Add Recipe__ button at bottom of form successfully creates new recipe in database | Pass
+Newly added recipe displays as a collapsible element on Recipes page with appropriate information and action buttons | Pass
+
 ### Edit Recipe
 
 ### Delete Recipe
