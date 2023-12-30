@@ -220,6 +220,30 @@ Clicking the __Full Recipe__ button on a recipe collapsible (on the 'Recipes' pa
     - __Edit__ - If created by the user.
     - __Delete__ - If created by the user.
 
+## Add Recipe
+
+![Add Recipe](static/images/add-recipe.png)
+
+Clicking the __Add Recipe__ nav link opens its respective page, where a form to add a new recipe is displayed. The form consists of the following:
+
+- Form Header
+- Form fields:
+    - Recipe Name - _required_
+    - Image URL - _optional_
+    - Recipe Description - _required_
+    - Meal Type - _required_
+    - Serves (portions) - _required_
+    - Ready In (prep and cooking time) - _required_
+    - Ingredients - _first line required_
+    - Method - _first line required_
+- Add Recipe (submit) button
+
+Each form field has validation to meet length and format.
+
+Submitting the form creates a new object/entry in the 'recipes' collection in the database.
+
+The recipe-creator's username is assigned to the recipe, which is used to display the recipe in the user's 'My Recipes' tab in their profile.
+
 # Technologies Used
 
 ## Languages
