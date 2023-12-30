@@ -75,6 +75,31 @@ The web application was tested across a wide variety of devices using [Google Ch
 
 ### Navbar
 
+#### Logo/Header Functionality
+
+Outcome | Pass/Fail
+--- | ---
+Logo and header both reload the home page when clicked, as expected | Pass
+
+#### Nav Links Displayed
+
+Status | Links Displayed | Pass/Fail
+--- | --- | ---
+Signed Out | Home - Recipes - Sign In - Register | Pass
+Signed In | Home - Recipes - Add Recipe - Sign Out - Profile | Pass
+
+#### Nav Links Functionality
+
+Link | Outcome | Pass/Fail
+--- | --- | ---
+Home | Takes user to the Home page as expected | Pass
+Recipes | Loads the Recipes page as expected | Pass
+Add Recipe | Takes user to the Add Recipe page as expected | Pass
+Sign In | Takes user to Sign In page as expected | Pass
+Sign Out | Signs the user out as expected | Pass
+Register | Takes user to the Register page as expected | Pass
+Profile | Takes user to their profile as expected | Pass
+
 ### Home
 
 ### Recipes
