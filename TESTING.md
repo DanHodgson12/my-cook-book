@@ -142,6 +142,17 @@ Sign Out nav link signs user out and displays correct flashed message as expecte
 
 ### Register
 
+Outcome | Pass/Fail
+--- | ---
+An animation and message for validation displays if no text entered in Username or Password field | Pass
+An animation and message for validation displays if incorrect length or format of information is entered in Username or Password field | Pass
+Submitting the form with a username already in use prevents user from registering | Pass
+Submitting the form with a username already in use displays the appropriate flash message at the top of the screen | Pass
+Submitting the form with correctly formatted information creates the user in the databse and takes them to their Profile | Pass
+Submitting the form with correctly formatted information displays the appropriate flash message at the top of the screen | Pass
+Register functionality successfully hashes the user's password and displays as encrypted in the database | Pass
+Sign In button in reminder underneath Register form takes user to the Register page as expected | Pass
+
 ### Profile
 
 ### Known Bugs
