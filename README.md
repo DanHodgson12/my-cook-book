@@ -1,6 +1,10 @@
 # My CookBook
 
-![My CookBook Final Design]()
+![My CookBook Final Design](static/images/my-cookbook-mockup-final.png)
+
+My CookBook is an interactive recipe web application, designed for users wanting to create, search for, edit and delete recipes.
+
+The main goal for this application is to offer a fun and personalised experience for the user, giving them the ability to contribute their own recipe ideas to the online cooking community, whilst also allowing them to save ideas for their own use.
 
 Visit the deployed site [here](https://my-cook-book-dh-6fcf65fd1fe5.herokuapp.com/).
 
