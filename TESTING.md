@@ -235,6 +235,14 @@ Sign In button in reminder underneath Register form takes user to the Register p
 
 ### Profile
 
+Outcome | Pass/Fail
+--- | ---
+Username displayed correctly in header | Pass
+Renders user's created recipes in 'My Recipes' tab as expected | Pass
+Collapsibles in 'My Recipes' tab rendered identically to those on Recipes page as expected | Pass
+Renders user's saved recipes in 'My CookBook' tab as expected | Pass
+Collapsibles in 'My CookBook' tab rendered identically to those on Recipes page as expected | Pass
+
 ### Known Bugs
 
 There are no known bugs with the web application.
