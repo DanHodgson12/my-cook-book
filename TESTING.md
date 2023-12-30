@@ -123,6 +123,17 @@ Recipes button takes user to Recipes page as expected | Pass
 
 ### Sign In
 
+Outcome | Pass/Fail
+--- | ---
+An animation and message for validation displays if no text entered in Username or Password field | Pass
+Submitting the form successfully checks if the username and password belong to the same user | Pass
+Submitting the form with correct information signs the user in and takes them to their Profile | Pass
+Submitting the form with correct information displays the appropriate flash message at the top of the screen | Pass
+Submitting the form with incorrect information prevents user from signing in | Pass
+Submitting the form with incorrect information displays a warning flash message at the top of the screen | Pass
+Warning flash message indicates either Username or Password incorrect | Pass
+Register button in reminder underneath Sign In form takes user to the Register page as expected | Pass
+
 ### Sign Out
 
 Outcome | Pass/Fail
