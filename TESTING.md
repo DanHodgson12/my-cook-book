@@ -60,3 +60,17 @@ The CI Python Linter returned no errors in the code.
 ![Python Validation](static/images/python-validation.png)
 
 ## Lighthouse Report
+
+Lighthouse in Google Chrome Dev Tools was used to test performance, accessibility, best practices and search engine optimisation of the webpage.
+
+Suggestions were made to optimise SEO by adding 'meta' tags to each page. However, this was ignored as meta tags were included in the base template and were being duplicated via Jinja.
+
+Page | Report
+--- | ---
+Home | ![Home Report](static/images/lighthouse-home.png)
+Recipes | ![Recipes Report](static/images/lighthouse-recipes.png)
+Add Recipe | ![Add Recipe Report](static/images/lighthouse-add-recipe.png)
+Edit Recipe | ![Edit Recipe Report](static/images/lighthouse-edit-recipe.png)
+Sign In | ![Sign In Report](static/images/lighthouse-sign-in.png)
+Register | ![Register Report](static/images/lighthouse-register.png)
+Profile | ![Profile Report](static/images/lighthouse-profile.png)
