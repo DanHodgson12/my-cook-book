@@ -4,6 +4,15 @@
 
 ## Tools Testing
 
+- [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+  - Google Chrome DevTools was used throughout the development process to test, explore and make changes to the HTML and CSS of the webpage.
+  - Google Chrome DevTools was used throughout the development process to test, explore and make changes to the JavaScript controlling certain elements being utilised from Materialize.
+
+- Responsiveness
+  - [Responsive Design Checker](https://www.responsivedesignchecker.com/) was used to check responsiveness across a variety of devices and screen sizes.
+  - [Am I Responsive?](https://ui.dev/amiresponsive) was used to check responsiveness across different screen sizes and generate the mockup final image.
+  - [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) was used to check responsiveness across different screen sizes during the development and testing phases.
+
 ## Compatibility Testing
 
 ### Browser Compatibility
