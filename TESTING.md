@@ -73,6 +73,30 @@ The web application was tested across a wide variety of devices using [Google Ch
 
 ## Common Elements Testing
 
+### Navbar
+
+### Home
+
+### Recipes
+
+### Add Recipe
+
+### Edit Recipe
+
+### Delete Recipe
+
+### Save Recipe
+
+### Forget Recipe
+
+### Sign In
+
+### Sign Out
+
+### Register
+
+### Profile
+
 ### Known Bugs
 
 There are no known bugs with the web application.
