@@ -111,6 +111,36 @@ Recipes button takes user to Recipes page as expected | Pass
 
 ### Recipes
 
+#### Collapsibles
+
+Outcome | Pass/Fail
+--- | ---
+All recipes from database are displayed in collapsible elements as expected | Pass
+First recipe collapsible is automatically displayed when page loads | Pass
+All collapsible headers are clickable and expand/collapse body as expected | Pass
+Last clicked collapsible closes when a new collapsible is opened as expected | Pass
+Collapsible's caret icon rotates 90 degrees when expanded or collapsed as expected | Pass
+Recipe image and text displayed correctly with no formatting or responsiveness issues | Pass
+All recipe action buttons displaying appropriately according to user status and recipe-ownership | Pass
+
+#### Action Buttons
+
+Button | Outcome | Pass/Fail
+--- | --- | ---
+Full Recipe | Opens full version of recipe in a new window as expected | Pass
+Save Recipe | Successfully saves recipe to 'My CookBook' in user's profile | Pass
+Forget Recipe | Successfully removes recipe from 'My CookBook' in user's profile | Pass
+Edit | Takes user to the Edit Recipe page as expected | Pass
+Delete | Opens warning modal with option to cancel or confirm deletion as expected | Pass
+
+#### Search Bar
+
+Outcome | Pass/Fail
+--- | ---
+Successfully renders recipes related to keyword or keywords | Pass
+__Cancel__ button clears search bar as expected | Pass
+__Search__ button executes search function as expected | Pass
+
 ### Add Recipe
 
 ### Edit Recipe
