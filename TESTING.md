@@ -141,6 +141,26 @@ Successfully renders recipes related to keyword or keywords | Pass
 __Cancel__ button clears search bar as expected | Pass
 __Search__ button executes search function as expected | Pass
 
+### View/Full Recipe
+
+#### Content
+
+Outcome | Pass/Fail
+--- | ---
+Recipe image and text displayed correctly with no formatting or responsiveness issues | Pass
+Ingredients rendering correctly from database | Pass
+Method rendering correctly from database | Pass
+All recipe action buttons displaying appropriately according to user status and recipe-ownership | Pass
+
+#### Action Buttons
+
+Button | Outcome | Pass/Fail
+--- | --- | ---
+Save Recipe | Successfully saves recipe to 'My CookBook' in user's profile | Pass
+Forget Recipe | Successfully removes recipe from 'My CookBook' in user's profile | Pass
+Edit | Takes user to the Edit Recipe page as expected | Pass
+Delete | Opens warning modal with option to cancel or confirm deletion as expected | Pass
+
 ### Add Recipe
 
 ### Edit Recipe
