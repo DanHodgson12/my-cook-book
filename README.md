@@ -85,6 +85,16 @@ Please see below for examples of each data-model.
 
 ## Users
 
+This schema is used to store details of a user after they have created their account. The keys of this object are used in the following ways:
+
+- `username`
+  - Displayed at the top of the user's profile.
+  - Dsiaplayed in the 'Created By' section of a recipe collapsible and full version of the recipe.
+- `password`
+  - This is sensitive information so is not used in any way other than the authentication of the user when signing in/registering.
+- `my_cookbook`
+  - When a user saves a recipe to their CookBook, the ID of the recipe is added into an array assigned to this key, in order to display the recipe in the user's CookBook.
+
 <details>
 <summary>Model</summary>
 
