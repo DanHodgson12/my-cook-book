@@ -266,14 +266,23 @@ Clicking the 'Edit' button on a recipe collapsible, or the full version of the r
 
 ## Frameworks, Libraries & Programs
 
-- [Font Awesome](https://fontawesome.com/)
-  - Font Awesome was used to add icons/images to the computer and player tiles.
-
 - [Codeanywhere](https://app.codeanywhere.com/)
   - Codeanywhere was used for writing, committing and pushing the code to GitHub.
 
 - [Materialize](https://materializecss.com/)
   -Materialize was used to develop a responsive mobile-first design using an assortment of templates.
+
+- [Font Awesome](https://fontawesome.com/)
+  - Font Awesome was used to add icons/images to the computer and player tiles.
+
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+  - Flask was used as the web application framework for use with Python.
+
+- [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+  - Jinja was used as the templating engine for this application.
+
+- [MongoDB](https://www.mongodb.com/)
+  - MongoDB was used as the data platform for this application to perform CRUD functionality.
 
 - [jQuery](https://jquery.com/)
   - jQuery was used as the preferred JavaScript library for HTML document traversal and manipulation, event handling and animation.
