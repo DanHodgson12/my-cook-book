@@ -77,6 +77,20 @@ Page | Wireframe
 --- | ---
 Recipes | ![Recipes](static/images/recipes-wireframe.png)
 
+# Relational vs Non-Relational Database
+
+Relational databases and non-relational databases are two of many databases which can be utilised in a web application. Each database differs in the way it uses data models and how data can be scaled with each model.
+
+1. Relational
+   1. Follow a structured, table-based model
+   2. Data organised in rows and columns
+   3. Good at managing structured data with complex relationships
+   4. Suitable for applications requiring strong consistency, such as financial systems
+2. Non-Relational
+   1. Flexible data models like documents, key-value pairs, or graphs
+   2. Prioritize scalability and accommodate dynamic, unstructured data
+   3. Good at delivering horizontal scalability, such as web applications or real-time analytics
+
 # Database Schemas
 
 The database used for this application is stored in the non-relational database __MongoDB__, which is known for using a "schema-less" or "schema-flexible" modeling concept. The reason behind the choice to use a non-relational database for this application was that the relation between each data-model wasn't as complex as - and didn't need to be manipulated like - a relational database data-model.
