@@ -130,7 +130,32 @@ This schema is used primarily for users to categorise the recipes they add to th
 
 ## Recipes
 
-This is the main schema in which information about recipes is stored. Each key in the scheme is manipulated in different ways, such as adding the recipe's ID to the user's `my_cookbook` array.
+This is the main schema in which information about recipes is stored. Each key in the schema is manipulated in different ways, such as:
+
+- `_id`
+  - Render each recipe in the collapsibles on the Recipes page and Profile page.
+  - Add the recipe to the user's CookBook when they click the 'Save' button on a recipe.
+- `recipe_name`
+  - Render the name of the recipe in the collapsible header and full-recipe page header.
+  - Searchable in the search bar on the Recipes page.
+- `recipe_desc`
+  - Render the description of the recipe in the collapsible body and full-recipe page.
+  - Searchable in the search bar on the Recipes page.
+- `meal_type`
+  - Render the meal type of the recipe in the collapsible body and full-recipe page.
+  - Searchable in the search bar on the Recipes page.
+- `serves`
+  - Render the serving size of the recipe in the collapsible body and full-recipe page.
+- `ready_in`
+  - Render the serving size of the recipe in the collapsible body and full-recipe page.
+- `ingredients`
+  - Render each individual ingredient in an unordered list on the full-recipe page.
+- `method`
+  - Render each individual method step in an ordered list on the full-recipe page.
+- `created_by`
+  - Render the creator of the recipe in the collapsible body and full-recipe page.
+- `recipe_img`
+  - Render an image of the recipe in the collapsible body and full-recipe page.
 
 ### Model
 
