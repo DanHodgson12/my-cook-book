@@ -77,7 +77,7 @@ Page | Wireframe
 --- | ---
 Recipes | ![Recipes](static/images/recipes-wireframe.png)
 
-# Database Schema
+# Database Schemas
 
 The database used for this application is stored in the non-relational database __MongoDB__, which is known for using a "schema-less" or "schema-flexible" modeling concept. The reason behind the choice to use a non-relational database for this application was that the relation between each data-model wasn't as complex as - and didn't need to be manipulated like - a relational database data-model.
 
@@ -215,6 +215,30 @@ This is the main schema in which information about recipes is stored. Each key i
   }
 }
 ```
+
+## CRUD Functionality
+
+The main purpose of this application is to privide users with the ability to Create (add), Read (locate, search for), Update (edit) & Delete (delete, remove) records.
+
+## Create
+
+- Users can create their own account in order to start using features such as adding a recipe, saving a recipe, etc.
+- Users can create their own recipe to be shown on the main Recipes page and in their profile.
+
+## Read
+
+- Users can search for specific recipes using the Search bar on the Recipes page.
+- Users can view the full version of the recipe using the Full Recipe button on a recipe collapsible.
+
+## Update
+
+- Users can edit a recipe they have created.
+
+## Delete
+
+- Users can delete a recipe they have created.
+  - A pop-up/modal has been used in this instance, in order to utilise the benefits of defensive programming.
+- Users can remove a recipe from their saved recipes (the 'My CookBook' tab in their profile).
 
 # Features
 
