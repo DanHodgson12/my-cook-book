@@ -83,6 +83,33 @@ The database used for this application is stored in the non-relational database 
 
 Please see below for examples of each data-model.
 
+## Users
+
+### Model
+
+- `_id`: ObjectId (Automatically generated unique identifier)
+- `username`: String (User's chosen username)
+- `password`: String (User's password - this is hashed, using Werkzeug's Security Helper 'generate_password_hash')
+- `my_cookbook`: Array (User's saved recipes - this array is empty upon user-creation)
+  - `0`: String (ObjectID of recipe)
+  - `1`: String (ObjectID of recipe)
+  - `0`: String (ObjectID of recipe)
+
+### Example
+
+```json
+{
+  "_id": ObjectId("659153d1b9ce951d2bdf6597"),
+  "username": "exampleuser123",
+  "password": "scrypt:32768:8:1$ZbOMTxq9TMnRiLev$3...",
+  "my_cookbook": {
+    0: "6591544fb9ce951d2bdf6598",
+    1: "6591545bdd6d1822d9e9d4c3",
+    2: "65915467dd6d1822d9e9d4c4"
+  }
+}
+```
+
 # Features
 
 - The application was designed from a mobile-first perspective.
