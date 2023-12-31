@@ -85,7 +85,8 @@ Please see below for examples of each data-model.
 
 ## Users
 
-### Model
+<details>
+<summary>Model</summary>
 
 - `_id`: ObjectId (Automatically generated unique identifier)
 - `username`: String (User's chosen username)
@@ -95,7 +96,10 @@ Please see below for examples of each data-model.
   - `1`: String (ObjectID of recipe)
   - `2`: String (ObjectID of recipe)
 
-### Example
+</details>
+
+<details>
+<summary>Example</summary>
 
 ```json
 {
@@ -110,16 +114,21 @@ Please see below for examples of each data-model.
 }
 ```
 
+</details>
+
 ## Meal Types
 
 This schema is used primarily for users to categorise the recipes they add to the database. It is also a way for users to search for different meal types using the Search bar on the Recipes page.
 
-### Model
+<details>
+<summary>Model</summary>
 
 - `_id`: ObjectId (Automatically generated unique identifier)
 - `meal_type`: String (type of meal, i.e. breakfast)
+</details>
 
-### Example
+<details>
+<summary>Example</summary>
 
 ```json
 {
@@ -127,6 +136,8 @@ This schema is used primarily for users to categorise the recipes they add to th
   "meal_type": "breakfast"
 }
 ```
+
+</details>
 
 ## Recipes
 
@@ -157,7 +168,8 @@ This is the main schema in which information about recipes is stored. Each key i
 - `recipe_img`
   - Render an image of the recipe in the collapsible body and full-recipe page.
 
-### Model
+<details>
+<summary>Model</summary>
 
 - `_id`: ObjectId (Automatically generated unique identifier)
 - `recipe_name`: String (Recipe Name)
@@ -180,7 +192,10 @@ This is the main schema in which information about recipes is stored. Each key i
   - `src`: String
   - `alt`: String
 
-### Exmaple
+</details>
+
+<details>
+<summary>Example</summary>
 
 ```json
 {
@@ -215,6 +230,7 @@ This is the main schema in which information about recipes is stored. Each key i
   }
 }
 ```
+</details>
 
 ## CRUD Functionality
 
