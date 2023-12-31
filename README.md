@@ -77,6 +77,12 @@ Page | Wireframe
 --- | ---
 Recipes | ![Recipes](static/images/recipes-wireframe.png)
 
+# Database Schema
+
+The database used for this application is stored in the non-relational database __MongoDB__, which is known for using a "schema-less" or "schema-flexible" modeling concept. The reason behind the choice to use a non-relational database for this application was that the relation between each data-model wasn't as complex as - and didn't need to be manipulated like - a relational database data-model.
+
+Please see below for examples of each data-model.
+
 # Features
 
 - The application was designed from a mobile-first perspective.
