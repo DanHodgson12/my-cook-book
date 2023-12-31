@@ -93,7 +93,7 @@ Please see below for examples of each data-model.
 - `my_cookbook`: Array (User's saved recipes - this array is empty upon user-creation)
   - `0`: String (ObjectID of recipe)
   - `1`: String (ObjectID of recipe)
-  - `0`: String (ObjectID of recipe)
+  - `2`: String (ObjectID of recipe)
 
 ### Example
 
@@ -125,6 +125,69 @@ This schema is used primarily for users to categorise the recipes they add to th
 {
   "_id": ObjectId("659153d1b9ce951d2bdf6597"),
   "meal_type": "breakfast"
+}
+```
+
+## Recipes
+
+This is the main schema in which information about recipes is stored. Each key in the scheme is manipulated in different ways, such as adding the recipe's ID to the user's `my_cookbook` array.
+
+### Model
+
+- `_id`: ObjectId (Automatically generated unique identifier)
+- `recipe_name`: String (Recipe Name)
+- `recipe_desc`: String (Recipe Description)
+- `meal_type`: String (Meal Type)
+- `serves`: String (Serving Size)
+- `ready_in`: Object (Time to prepare & cook)
+  - `hours`: String
+  - `minutes`: String
+- `ingredients`: Array (Individual ingredients)
+  - `0`: String (First ingredient)
+  - `1`: String (Second ingredient)
+  - `2`: String (Third ingredient)
+- `method`: Array (Individual method steps)
+  - `0`: String (Step 1)
+  - `1`: String (Step 2)
+  - `2`: String (Step 3)
+- `created_by`: String (User who created the recipe)
+- `recipe_img`: Object ('src' and 'alt' of the image provided)
+  - `src`: String
+  - `alt`: String
+
+### Exmaple
+
+```json
+{
+  "_id": ObjectId("6591596add6d1822d9e9d4c5"),
+  "recipe_name": "Crustless Quiche Lorraine",
+  "recipe_desc": "This simplified version of the classic French tart...",
+  "meal_type": "dinner",
+  "serves": "4",
+  "ready_in": { "hours": "1", "minutes": "0" },
+  "ingredients": [
+    "low-calorie cooking spray",
+    "8 lean bacon rashers, all visible fat removed and roughly chopped",
+    "1 onion, finely chopped",
+    "6 large free-range eggs",
+    "100g/3½oz half-fat Cheddar, grated",
+    "2 tbsp chopped fresh tarragon",
+    "2 tbsp finely chopped fresh chives",
+    "100g/3½oz cherry tomatoes, halved or quartered",
+    "salt and freshly ground black pepper",
+    "crisp green salad, to serve"
+  ],
+  "method": [
+    "Preheat the oven to 180C/160C Fan/Gas 4.",
+    "Spray a large frying pan with low-calorie cooking spray...",
+    "Whisk the eggs in a wide bowl and stir in half the cheese...",
+    "Lightly spray a 20–22cm/8–8½in round ovenproof dish or non-stick pie tin..."
+  ],
+  "created_by": "dantheman",
+  "recipe_img": {
+    "src": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600...",
+    "alt": "Image of Crustless Quiche Lorraine recipe."
+  }
 }
 ```
 
