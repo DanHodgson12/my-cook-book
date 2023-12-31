@@ -208,17 +208,17 @@ Clicking the __Full Recipe__ button on a recipe collapsible (on the 'Recipes' pa
 - Recipe Image (if provided)
 - Recipe Description
 - Recipe Info:
-    - Meal type, i.e 'Lunch', 'Dinner', etc.
-    - Time to prepare and cook the recipe.
-    - Number of servings.
-    - Creator of the recipe.
+  - Meal type, i.e 'Lunch', 'Dinner', etc.
+  - Time to prepare and cook the recipe.
+  - Number of servings.
+  - Creator of the recipe.
 - Recipe Ingredients
 - Recipe Method
 - Action Buttons:
-    - __Save Recipe__ - If __not__ already saved to the user's CookBook.
-    - __Forget Recipe__ - If already saved to the user's CookBook.
-    - __Edit__ - If created by the user.
-    - __Delete__ - If created by the user.
+  - __Save Recipe__ - If __not__ already saved to the user's CookBook.
+  - __Forget Recipe__ - If already saved to the user's CookBook.
+  - __Edit__ - If created by the user.
+  - __Delete__ - If created by the user.
 
 ## Add Recipe
 
@@ -228,14 +228,14 @@ Clicking the __Add Recipe__ nav link opens its respective page, where a form to 
 
 - Form Header
 - Form fields:
-    - Recipe Name - _required_
-    - Image URL - _optional_
-    - Recipe Description - _required_
-    - Meal Type - _required_
-    - Serves (portions) - _required_
-    - Ready In (prep and cooking time) - _required_
-    - Ingredients - _first line required_
-    - Method - _first line required_
+  - Recipe Name - _required_
+  - Image URL - _optional_
+  - Recipe Description - _required_
+  - Meal Type - _required_
+  - Serves (portions) - _required_
+  - Ready In (prep and cooking time) - _required_
+  - Ingredients - _first line required_
+  - Method - _first line required_
 - Add Recipe (submit) button
 
 Each form field has validation to meet length and format.
@@ -253,7 +253,7 @@ Clicking the 'Edit' button on a recipe collapsible, or the full version of the r
 - Form fields are prefilled with the recipe's information
 - __Cancel__ button wipes any changes made to the form before submission
 - __Edit Recipe__ button submits the form with the new changes
-    - The recipe in the database is updated with any new information but retains any unchanged information
+  - The recipe in the database is updated with any new information but retains any unchanged information
 
 # Technologies Used
 
