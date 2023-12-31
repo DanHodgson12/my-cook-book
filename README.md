@@ -110,6 +110,24 @@ Please see below for examples of each data-model.
 }
 ```
 
+## Meal Types
+
+This schema is used primarily for users to categorise the recipes they add to the database. It is also a way for users to search for different meal types using the Search bar on the Recipes page.
+
+### Model
+
+- `_id`: ObjectId (Automatically generated unique identifier)
+- `meal_type`: String (type of meal, i.e. breakfast)
+
+### Example
+
+```json
+{
+  "_id": ObjectId("659153d1b9ce951d2bdf6597"),
+  "meal_type": "breakfast"
+}
+```
+
 # Features
 
 - The application was designed from a mobile-first perspective.
