@@ -323,6 +323,14 @@ The Non-User Navbar consists of:
 
 The simple layout of the navbar, along with the instructions info, about info and clickable links on the Home page, allos the user to [navigate the application easily, so that I can start using the application as soon as possible](#user-stories).
 
+### Side Navbar
+
+On screen sizes smaller than 993px, the navbar collapses into a 'hamburger' icon at the top right of the navbar. and the links are moved to the sidenav.
+
+User | Non-User
+--- | ---
+![User](static/images/side-nav-user.png) | ![Non-User](static/images/side-nav-non-user.png)
+
 ## Home
 
 ![Home](static/images/home-page.png)
