@@ -494,6 +494,27 @@ The Register page consists of:
   - Creates new user
   - Redirects user to their profile
 
+## Profile
+
+The profile page is where the user's own recipes, as well as recipes they have saved, are shown. A header at the top of the page reads "< username >'s Profile".
+
+### My Recipes
+
+![Profile](static/images/profile-my-recipes.png)
+
+- The My Recipes tab shows all recipes that the user has add/created themselves.
+- Displays recipes in collapsibles, identical to collapsibles on Recipes page.
+- Users are able to save their own recipes to their Cookbook.
+
+### My CookBook
+
+![Profile](static/images/profile-my-cookbook.png)
+
+- The My CookBook tab shows all recipes that the user has saved.
+- Displays recipes in collapsibles, identical to collapsibles on Recipes page.
+- Users are able to save their own recipes to their cookbook.
+- Clicking the 'Forget Recipe' button will remove the recipe from their CookBook.
+
 # Technologies Used
 
 ## Languages
