@@ -458,6 +458,42 @@ Clicking the 'Edit' button on a recipe collapsible, or the full version of the r
 - __Edit Recipe__ button submits the form with the new changes
   - The recipe in the database is updated with any new information but retains any unchanged information
 
+## Sign In
+
+![Sign In](static/images/sign-in.png)
+
+The Sign In page consists of:
+
+- Username field
+  - Is Required
+  - Checks if the username exists when submitted
+- Password field
+  - Is Required
+  - Checks the password matches the hashed password of the user with that username when submitted
+- Sign In (submit) button
+  - Checks the username and password match a user
+  - If incorrect username or password, flash message - "Incorrect Username and/or Password"
+    - This adds a layer of defensive programming
+
+## Register
+
+![Register](static/images/register.png)
+
+The Register page consists of:
+
+- Username field
+  - Is Required
+  - Checks for validation, such as required length and format
+  - If username already exists, flashed message is shown at the top of the screen
+- Password field
+  - Is Required
+  - Checks for validation, such as required length and format
+  - Hashes the password after user is created
+- Register (submit) button
+  - Checks if the information entered meets length and format
+  - Creates new user
+  - Redirects user to their profile
+
 # Technologies Used
 
 ## Languages
