@@ -532,6 +532,29 @@ The profile page is where the user's own recipes, as well as recipes they have s
 - Users are able to save their own recipes to their cookbook.
 - Clicking the 'Forget Recipe' button will remove the recipe from their CookBook.
 
+## Flashed Messages
+
+When a user performs a major action in the application, such as signing in, registering or deleting a recipe, a message is shown beneath the navbar to let the user know the status of that action. Click below to see all the flashed messages shown depending on action and outcome.
+
+<details>
+
+<summary>All Flashed Messages</summary>
+
+Action | Outcome | Message
+--- | --- | ---
+Sign In | Successful | ![Flash 1](static/images/flash-sign-in-s.png)
+Sign In | Unsuccessful | ![Flash 2](static/images/flash-sign-in-us.png)
+Sign Out | Successful | ![Flash 3](static/images/flash-sign-out.png)
+Register | Successful | ![Flash 4](static/images/flash-register-s.png)
+Register | Unsuccessful | ![Flash 5](static/images/flash-register-us.png)
+Add Recipe | Successful | ![Flash 6](static/images/flash-recipe-add.png)
+Edit Recipe | Successful | ![Flash 7](static/images/flash-recipe-edit.png)
+Delete Recipe | Successful | ![Flash 8](static/images/flash-recipe-delete.png)
+Save Recipe | Successful | ![Flash 9](static/images/flash-recipe-save.png)
+Forget Recipe | Successful | ![Flash 10](static/images/flash-recipe-forget.png)
+
+</details>
+
 # Technologies Used
 
 ## Languages
