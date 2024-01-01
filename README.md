@@ -71,11 +71,12 @@ The inspiration for this font pairing came from [this website](https://www.fontp
 
 ## Wireframes
 
-[Figma](https://www.figma.com/) was used to develop the initial concept of the main page of the application - the 'Recipes' page. The developer wanted to keep the main layout of this page a common theme across other pages of the application. However, the ideas for other pageds were conceived as the project grew.
+[Figma](https://www.figma.com/) was used to develop the initial concept of the main page of the application - the 'Recipes' page - as well as the Profile page, which follows a similar approach. The developer wanted to keep the main layout of this page a common theme across other pages of the application. However, the ideas for other pageds were conceived as the project grew.
 
 Page | Wireframe
 --- | ---
 Recipes | ![Recipes](static/images/recipes-wireframe.png)
+Profile | ![Profile](static/images/profile-wireframe.png)
 
 # Relational vs Non-Relational Database
 
