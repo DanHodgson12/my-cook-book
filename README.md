@@ -324,7 +324,7 @@ The Non-User Navbar consists of:
 
 ![Home](static/images/home-page.png)
 
-The Home page consist of the following:
+The Home page consists of the following:
 
 - Heading.
 - Information about the application and how to use it.
