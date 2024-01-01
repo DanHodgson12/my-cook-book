@@ -615,6 +615,146 @@ Please see a detailed breakdown of the testing carried out for this application 
 
 # Finished Product
 
+## Home
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop - Home](static/images/fp-home-1.png)
+</details>
+
+<details>
+<summary>Tablet</summary>
+
+![Tablet - Home](static/images/fp-home-2.png)
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile - Home](static/images/fp-home-3.png)
+</details>
+
+## Recipes
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop - Recipes](static/images/fp-recipes-1.png)
+</details>
+
+<details>
+<summary>Tablet</summary>
+
+![Tablet - Recipes](static/images/fp-recipes-2.png)
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile - Recipes](static/images/fp-recipes-3.png)
+</details>
+
+## Add Recipe
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop - Add Recipe](static/images/fp-add-recipe-1.png)
+</details>
+
+<details>
+<summary>Tablet</summary>
+
+![Tablet - Add Recipe](static/images/fp-add-recipe-2.png)
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile - Add Recipe](static/images/fp-add-recipe-3.png)
+</details>
+
+## Edit Recipe
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop - Edit Recipe](static/images/fp-edit-recipe-1.png)
+</details>
+
+<details>
+<summary>Tablet</summary>
+
+![Tablet - Edit Recipe](static/images/fp-edit-recipe-2.png)
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile - Edit Recipe](static/images/fp-edit-recipe-3.png)
+</details>
+
+## Sign In
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop - Sign In](static/images/fp-sign-in-1.png)
+</details>
+
+<details>
+<summary>Tablet</summary>
+
+![Tablet - Sign In](static/images/fp-sign-in-2.png)
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile - Sign In](static/images/fp-sign-in-3.png)
+</details>
+
+## Register
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop - Home](static/images/fp-register-1.png)
+</details>
+
+<details>
+<summary>Tablet</summary>
+
+![Tablet - Home](static/images/fp-register-2.png)
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile - Home](static/images/fp-register-3.png)
+</details>
+
+## Profile
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop - Profile](static/images/fp-profile-1.png)
+</details>
+
+<details>
+<summary>Tablet</summary>
+
+![Tablet - Profile](static/images/fp-profile-2.png)
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile - Profile](static/images/fp-profile-3.png)
+</details>
+
 # Deployment
 
 This website was developed using [Codeanywhere](https://codeanywhere.com/solutions/collaborate), then committed and pushed to GitHub using the Codeanywhere terminal.
