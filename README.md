@@ -36,7 +36,7 @@ Visit the deployed site [here](https://my-cook-book-dh-6fcf65fd1fe5.herokuapp.co
 - As a user, I want to know what the application is about, so that I can understand the concept behind it.
 - As a user, I want to see the application's instructions, so that I can understand how to use it.
 - As a user, I want to be able to interact with the application, so that I can have a enjoyable experience.
-- As a user, I want to be given feedback when I interact with the application, so I know when an action I perform has been registered.
+- As a user, I want to be given feedback when I interact with the application, so I know when an action I perform has been registered.!!!
 - As a user, I want to be able to create my own profile, so I can begin using the application to its fullest.
 - As a user, I want to be able to add my own recipes, so I can share my knowledge with others.
 - As a user, I want to be able to access a wide range of recipes, so that I can find something that I like.
@@ -320,6 +320,8 @@ The Non-User Navbar consists of:
 - __Register__ - This takes the user to the Register page.
   - An option to Sign In is provided underneath the Register section if no account is found.
 
+The simple layout of the navbar, along with the instructions info, about info and clickable links on the Home page, allos the user to [navigate the application easily, so that I can start using the application as soon as possible](#user-stories).
+
 ## Home
 
 ![Home](static/images/home-page.png)
@@ -327,7 +329,10 @@ The Non-User Navbar consists of:
 The Home page consists of the following:
 
 - Heading.
-- Information about the application and how to use it.
+- Information about the application.
+  - This allows the user to [understand the concept behind the application](#user-stories).
+- Instructions on how to use the application.
+  - This allows the user to [understand how to use the application](#user-stories).
 - Several clickable buttons which link to their respective pages:
   - __Sign In__ - This takes the user to the Sign In page.
   - __Register__ - This takes the user to the Register page.
@@ -337,7 +342,7 @@ The Home page consists of the following:
 
 ![Recipes](static/images/recipes.png)
 
-This is the main page of the application. Here users will be able to search for any recipes stored in the application, perform actions such as saving, editing, deleting and viewing the full versions of the recipes.
+This is the main page of the application. Here users will be able to [access and search for a wide range of recipes stored in the application, so they can find someone that they like](#user-stories). They can also perform actions such as saving, editing, deleting and viewing the full versions of the recipes.
 
 ### Search Bar
 
@@ -373,12 +378,20 @@ These collapsible elements are where each recipe is displayed from the database.
 
 There are a total of 5 action buttons that will be displayed on the collapsible, depending on a number of factors (please see below for details). However, here are the main functions of each button:
 
-- __Full Recipe__ - Takes the user to a page displaying the full recipe, including the _Ingredients_ and _Method_.
-- __Save Recipe__ - Adds the recipe to the user's CookBook, which displays in the _My CookBook_ section of the user's profile.
-- __Forget Recipe__ - Removes the recipe from the user's CookBook.
-- __Edit__ - Takes the user to the Edit Recipe page where they can edit the recipe.
-- __Delete__ - Once clicked, opens a modal asking the user if they're sure they want to delete the recipe.
+- __Full Recipe__
+  - Takes the user to a page displaying the full recipe, including the _Ingredients_ and _Method_.
+- __Save Recipe__
+  - Adds the recipe to the user's CookBook, which displays in the _My CookBook_ section of the user's profile.
+  - [Allows users to see only the recipes that matter to them](#user-stories).
+- __Forget Recipe__
+  - Removes the recipe from the user's CookBook.
+  - [Allows users to see only the recipes that matter to them](#user-stories).
+- __Edit__
+  - Takes the user to the Edit Recipe page where they can edit the recipe.
+- __Delete__
+  - Once clicked, opens a modal asking the user if they're sure they want to delete the recipe.
   - The __Delete__ button inside the modal actually performs the function to delete the recipe from the database.
+  - This Delete functionality allows users the ability to [remove their information if they change their mind](#user-stories).
   - ![Delete Modal](static/images/delete-modal.png)
 
 If the User __is not__ signed in, the following will be displayed:
@@ -447,11 +460,15 @@ Submitting the form creates a new object/entry in the 'recipes' collection in th
 
 The recipe-creator's username is assigned to the recipe, which is used to display the recipe in the user's 'My Recipes' tab in their profile.
 
+Allowing the user to add their own recipe adds a [sense of interactivity to the application, which aims to provide the user with an enjoyable experience](#user-stories). It also allows the user to [share their knowledge with others](#user-stories).
+
 ## Edit Recipe
 
 ![Edit Recipe](static/images/edit-recipe.png)
 
-Clicking the 'Edit' button on a recipe collapsible, or the full version of the recipe, opens the 'edit_recipe' page. This page displays a form similar to the 'add_recipe' page, with a few changes:
+Clicking the 'Edit' button on a recipe collapsible, or the full version of the recipe, opens the 'edit_recipe' page. This function allows users to [make changes to a recipe they have created, or fix errors if needed](#user-stories).
+
+This page displays a form similar to the 'add_recipe' page, with a few changes:
 
 - Form fields are prefilled with the recipe's information
 - __Cancel__ button wipes any changes made to the form before submission
@@ -492,7 +509,7 @@ The Register page consists of:
 - Register (submit) button
   - Checks if the information entered meets length and format
   - Creates new user
-  - Redirects user to their profile
+  - [Redirects user to their profile](#user-stories)
 
 ## Profile
 
