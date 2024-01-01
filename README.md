@@ -534,7 +534,9 @@ The profile page is where the user's own recipes, as well as recipes they have s
 
 ## Flashed Messages
 
-When a user performs a major action in the application, such as signing in, registering or deleting a recipe, a message is shown beneath the navbar to let the user know the status of that action. Click below to see all the flashed messages shown depending on action and outcome.
+When a user performs a major action in the application, such as signing in, registering or deleting a recipe, a message is shown beneath the navbar to let the user know the status of that action. This provides the user with [feedback based on their interaction with the web application](#user-stories).
+
+Click below to see all the flashed messages shown depending on action and outcome.
 
 <details>
 
