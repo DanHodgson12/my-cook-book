@@ -28,47 +28,47 @@ The developer chose to use manual testing as the main form of testing throughout
 ## Testing User Stories
 
 - __As__ a user, I want to be able to navigate the application easily, __so__ that I can start using the application as soon as possible.
-    - __Given__ I load the web application, __when__ I look at the home page, __then__ I will be able to see the instructions for navigating the website easily.
+  - __Given__ I load the web application, __when__ I look at the home page, __then__ I will be able to see the instructions for navigating the website easily.
 
 - __As__ a user, I want to know what the application is about, __so__ that I can understand the concept behind it.
-    - __Given__ I load the web application, __when__ I look at the home page, __then__ I will be able to see information explaining the purpose for the web application.
+  - __Given__ I load the web application, __when__ I look at the home page, __then__ I will be able to see information explaining the purpose for the web application.
 
 - __As__ a user, I want to see the application's instructions, __so__ that I can understand how to use it.
-    - __Given__ I load the web application, __when__ I look at the home page, __then__ I will be able to see the instructions for using the website easily.
+  - __Given__ I load the web application, __when__ I look at the home page, __then__ I will be able to see the instructions for using the website easily.
 
 - __As__ a user, I want to be able to interact with the application, __so__ that I can have a enjoyable experience.
-    - __Given__ I interact with the 'Add Recipe' page, __when__ I submit a recipe, __then__ I can see my recipe displayed amongst the others and can see it in my profile.
+  - __Given__ I interact with the 'Add Recipe' page, __when__ I submit a recipe, __then__ I can see my recipe displayed amongst the others and can see it in my profile.
 
 - __As__ a user, I want to be given feedback when I interact with the application, __so__ I know when an action I perform has been registered.
-    - __Given__ I add/edit/delete/save/forget a recipe, __when__ I submit the form, __then__ I will see a flashed message at the top of the screen telling me whether or not I was successful.
-    - __Given__ I register/sign in/sign out, __when__ I submit the form, __then__ I will see a flashed message at the top of the screen telling me whether or not I was successful.
+  - __Given__ I add/edit/delete/save/forget a recipe, __when__ I submit the form, __then__ I will see a flashed message at the top of the screen telling me whether or not I was successful.
+  - __Given__ I register/sign in/sign out, __when__ I submit the form, __then__ I will see a flashed message at the top of the screen telling me whether or not I was successful.
 
 - __As__ a user, I want to be able to create my own profile, __so__ I can begin using the application to its fullest.
-    - __Given__ I load the Register page, __when__ I register a username and password, __then__ I see my profile created on the Profile page.
+  - __Given__ I load the Register page, __when__ I register a username and password, __then__ I see my profile created on the Profile page.
 
 - __As__ a user, I want to be able to add my own recipes, __so__ I can share my knowledge with others.
-    - __Given__ I click the Add Recipe Nav link, __when__ I add my recipe's details to the page, __then__ I will see my recipe displayed amongst the other recipes on the Recipes page.
+  - __Given__ I click the Add Recipe Nav link, __when__ I add my recipe's details to the page, __then__ I will see my recipe displayed amongst the other recipes on the Recipes page.
 
 - __As__ a user, I want to be able to access a wide range of recipes, __so__ that I can find something that I like.
-    - __Given__ I load the Recipes page, __when__ I use the search bar at the top of the page, __then__ I will be able to search for a recipe by keyword.
+  - __Given__ I load the Recipes page, __when__ I use the search bar at the top of the page, __then__ I will be able to search for a recipe by keyword.
 
 - __As__ a user, I want to be able to edit my own recipes, __so__ that I can make changes to the recipe or fix errors if needed.
-    - __Given__ I find my recipe on the Recipes page or in my profile, __when__ I click the 'Edit' button, __then__ I will be able to edit/update the details of my recipe.
+  - __Given__ I find my recipe on the Recipes page or in my profile, __when__ I click the 'Edit' button, __then__ I will be able to edit/update the details of my recipe.
 
 - __As__ a user, I want to be able to delete my own recipes, __so__ that I can remove my information if I change my mind.
-    - __Given__ I find my recipe on the Recipes page or in my profile, __when__ I click the 'Delete' button, __then__ I will be shown a warning message with a 'Confirm Deletion' button which will delete the recipe.
+  - __Given__ I find my recipe on the Recipes page or in my profile, __when__ I click the 'Delete' button, __then__ I will be shown a warning message with a 'Confirm Deletion' button which will delete the recipe.
 
 - __As__ a user, I want to be able to search for a specific recipe, __so__ that I can see which recipes suit my preferences.
-    - __Given__ I load the Recipes page, __when__ I use the search bar at the top of the page, __then__ I will be able to search for a recipe by keyword.
+  - __Given__ I load the Recipes page, __when__ I use the search bar at the top of the page, __then__ I will be able to search for a recipe by keyword.
 
 - __As__ a user, I want to be able to save recipes to my profile, __so__ that I can view only the recipes that matter to me.
-    - __Given__ I find a recipe I like, __when__ I click the 'Save Recipe' button, __then__ I will see the recipe saved in the 'My CookBook' tab in my profile.
+  - __Given__ I find a recipe I like, __when__ I click the 'Save Recipe' button, __then__ I will see the recipe saved in the 'My CookBook' tab in my profile.
 
 - __As__ a user, I want to be able to remove recipes from my profile, __so__ that I can view only the recipes that matter to me.
-    - __Given__ I find the saved recipe on the Recipes page or in my profile, __when__ I click the 'Forget Recipe' button, __then__ the recipe will be removed from the 'My CookBook' tab in my profile.
+  - __Given__ I find the saved recipe on the Recipes page or in my profile, __when__ I click the 'Forget Recipe' button, __then__ the recipe will be removed from the 'My CookBook' tab in my profile.
 
 - __As__ a user, I want the web application to be responsive, __so__ that I can use the application on a variety of screen sizes.
-    - __Given__ I load the web application, __When__ I load it on different screen sizes, __Then__ I will see the layout change to suit the screen size accordingly.
+  - __Given__ I load the web application, __When__ I load it on different screen sizes, __Then__ I will see the layout change to suit the screen size accordingly.
 
 ## Tools Testing
 
@@ -94,7 +94,8 @@ Microsoft Edge | No appearance, responsiveness or functionality issues | Pass
   
 ### Device Compatibility
 
-The web application was tested across a wide variety of devices using [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) & [Responsive Design Checker](https://www.responsivedesignchecker.com/). 
+The web application was tested across a wide variety of devices using [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) & [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+
 - No appearance, responsiveness or functionality issues were found.
 
 ## Common Elements Testing
@@ -223,7 +224,6 @@ Outcome | Pass/Fail
 Modals are opened upon clicking any __Delete__ button across application to prevent accidental deletion | Pass
 Delete function successfully removes recipe from database and is no longer displayed anywhere across application | Pass
 If recipe has been saved to user's CookBook, the recipe's ID is also removed from user's data in database | Pass
-
 
 ---
 
