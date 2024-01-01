@@ -127,6 +127,16 @@ Sign Out | Signs the user out as expected | Pass
 Register | Takes user to the Register page as expected | Pass
 Profile | Takes user to their profile as expected | Pass
 
+#### Side Nav
+
+Outcome | Pass/Fail
+--- | ---
+Navbar collapses to side nav on screens smaller than 993px | Pass
+Navbar expands on screens larger than 992px | Pass
+Burger Icon opens and closes sidenav as expected | Pass
+All links shown correctly depending on User or Non-User | Pass
+All links work as expected | Pass
+
 ---
 
 ### Home
