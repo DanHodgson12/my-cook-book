@@ -666,6 +666,26 @@ Please see a detailed breakdown of the testing carried out for this application 
 ![Mobile - Recipes](static/images/fp-recipes-3.png)
 </details>
 
+## View/Full Recipe
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop - View/Full Recipe](static/images/fp-full-recipe-1.png)
+</details>
+
+<details>
+<summary>Tablet</summary>
+
+![Tablet - View/Full Recipe](static/images/fp-full-recipe-2.png)
+</details>
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile - View/Full Recipe](static/images/fp-full-recipe-3.png)
+</details>
+
 ## Add Recipe
 
 <details>
