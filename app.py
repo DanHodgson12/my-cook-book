@@ -60,6 +60,18 @@ def view_recipe(recipe_id):
     """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
+
+    user_session = session.get("user")
+
+    if user_session is not None:
+        saved_recipes = mongo.db.users.find_one(
+            {"username": session["user"]}).get('my_cookbook', [])
+        return render_template(
+            "view_recipe.html", recipe=recipe,
+            meal_types=meal_types, recipe_id=recipe_id,
+            saved_recipes=saved_recipes,
+            current_page=url_for('view_recipe', recipe_id=recipe_id))
+
     return render_template(
         "view_recipe.html", recipe=recipe,
         meal_types=meal_types, recipe_id=recipe_id,
