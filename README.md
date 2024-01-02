@@ -581,7 +581,7 @@ Forget Recipe | Successful | ![Flash 10](static/images/flash-recipe-forget.png)
   - Codeanywhere was used for writing, committing and pushing the code to GitHub.
 
 - [Materialize](https://materializecss.com/)
-  -Materialize was used to develop a responsive mobile-first design using an assortment of templates.
+  - Materialize was used to develop a responsive mobile-first design using an assortment of templates.
 
 - [Font Awesome](https://fontawesome.com/)
   - Font Awesome was used to add icons/images to the computer and player tiles.
