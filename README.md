@@ -610,6 +610,9 @@ Forget Recipe | Successful | ![Flash 10](static/images/flash-recipe-forget.png)
 - [JSLint](https://www.jslint.com/)
   - JSLint was used to validate the JavaScript.
 
+- [CI Python Linter](https://pep8ci.herokuapp.com/)
+  - The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python.
+
 - [Favicon.io](https://favicon.io/)
   - Favicon.io was used to create the site favicon.
 
