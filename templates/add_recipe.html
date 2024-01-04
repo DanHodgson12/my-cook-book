@@ -5,7 +5,6 @@
 
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-            <!-- recipe name & image -->
             <div class="row">
                 <div class="input-field col s12 m7">
                     <i class="fa-solid fa-pen prefix"></i>
@@ -20,7 +19,6 @@
                     <label for="recipe_img">Image URL (optional)</label>
                 </div>
             </div>
-            <!-- recipe description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-align-left prefix"></i>
@@ -30,7 +28,6 @@
                 </div>
             </div>
             <div class="row">
-                <!-- meal type -->
                 <div class="input-field col s12 m4">
                     <i class="fa-solid fa-bowl-food prefix"></i>
                     <select id="meal_type" name="meal_type" class="validate" required>
@@ -41,13 +38,11 @@
                     </select>
                     <label for="meal_type">Meal Type</label>
                 </div>
-                <!-- serves -->
                 <div class="input-field col s12 m4">
                     <i class="fa-solid fa-users prefix"></i>
                     <input id="serves" name="serves" type="number" class="validate" required placeholder="e.g. 4-6">
                     <label for="serves">Serves</label>
                 </div>
-                <!-- ready in -->
                 <div class="input-field col s6 m2">
                     <input id="ready_hours" name="ready_hours" type="number" class="validate" required placeholder="Hrs">
                     <label for="ready_hours"><i class="fa-regular fa-clock recipe-icon"></i> Ready In</label>
@@ -57,7 +52,6 @@
                     <label for="ready_minutes"></label>
                 </div>
             </div>
-            <!-- ingredients -->
             <div class="row">
                 <div class="col s12 m6 offset-m3 input-field">
                     <i class="fa-solid fa-rectangle-list prefix"></i>
@@ -66,7 +60,6 @@
                     placeholder="Example: &#10 2 Chicken Breast &#10 500g Flour &#10 2 tsp Sugar &#10 50 g ground almonds &#10 1 x 400 g tin of chickpeas"></textarea>
                 </div>
             </div>
-            <!-- method -->
             <div class="row">
                 <div class="col s12 input-field">
                     <table id="method-table">

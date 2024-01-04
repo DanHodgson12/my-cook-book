@@ -15,7 +15,6 @@
 <body>
 
     <header>
-        <!-- main navbar -->
         <nav>
             <div class="nav-wrapper text-shadow red darken-4">
                 <a href="{{ url_for('home') }}" id="chef-hat">
@@ -40,7 +39,6 @@
             </div>
         </nav>
         
-        <!-- mobile navbar -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align red-text text-darken-4">My CookBook</h4></li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -57,7 +55,6 @@
     </header>
 
     <section>
-        <!-- flash messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 <ul class="flashes center-align white-text text-shadow">
@@ -78,7 +75,5 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
 </body>
 </html>

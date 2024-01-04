@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-    <!-- profile name -->
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
@@ -10,7 +9,6 @@
             </div>
         </div>
     </div>
-    <!-- tabs -->
     <div class="row">
         <div class="col s12">
             <ul class="tabs tabs-fixed-width">
@@ -18,7 +16,6 @@
                 <li class="tab col s3"><a class="active" href="#saved-recipes">My CookBook</a></li>
             </ul>
         </div>
-        <!-- user's created recipes -->
         <div id="my-recipes" class="col s12">
             <ul class="collapsible">
                 {% for recipe in recipes %}
@@ -100,7 +97,6 @@
                                             </a>
                                         </div>
                                         <div class="col s6 m6 l3">
-                                            <!-- Delete Recipe Modal Trigger -->
                                             <a href="#createdRecipeDelete{{ recipe._id }}" class="waves-effect waves-light btn red modal-trigger">
                                                 Delete
                                                 <i class="fa-solid fa-trash-can"></i>
@@ -109,7 +105,6 @@
                                     {% endif %}
                                 </div>
                             </div>
-                            <!-- Delete Recipe Modal -->
                             <div id="createdRecipeDelete{{ recipe._id }}" class="modal modal-fixed-footer">
                                 <div class="modal-content">
                                     <h4 class="center-align">Warning!</h4>
@@ -142,8 +137,6 @@
                 {% endfor %}
             </ul>
         </div>
-        
-        <!-- user's saved recipes -->
         <div id="saved-recipes" class="col s12">
             <ul class="collapsible">
                 {% for recipe in my_cookbook %}
@@ -220,7 +213,6 @@
                                         </a>
                                     </div>
                                     <div class="col s6 m6 l3">
-                                        <!-- Delete Recipe Modal Trigger -->
                                         <a href="#savedRecipeDelete{{ recipe._id }}" class="waves-effect waves-light btn red modal-trigger">
                                             Delete
                                             <i class="fa-solid fa-trash-can"></i>
@@ -229,7 +221,6 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <!-- Delete Recipe Modal -->
                         <div id="savedRecipeDelete{{ recipe._id }}" class="modal modal-fixed-footer">
                             <div class="modal-content">
                                 <h4 class="center-align">Warning!</h4>

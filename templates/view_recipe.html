@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <!-- header -->
+
     <h1 class="center-align"><strong>{{ recipe.recipe_name|title }}</strong></h1>
 
     <div class="row">
-        <!-- image -->
         {% if 'recipe_img' in recipe and 'src' in recipe['recipe_img'] and recipe['recipe_img']['src'] != '' %}
         <div class="col s12 l6 xl5 center-align">
             <img class="recipe-img" src="{{ recipe.recipe_img.src }}"
@@ -12,7 +11,6 @@
                 title="Image of '{{ recipe.recipe_name|title }}' recipe.">
         </div>
         {% endif %}
-        <!-- description & info -->
         <div class="col s12 l6 xl7">
             <p>{{ recipe.recipe_desc }}</p>
             <ul>
@@ -38,7 +36,6 @@
     </div>
 
     <div class="row">
-        <!-- ingredients -->
         <div class="col s12 l5">
             <h2><i class="fa-solid fa-rectangle-list"></i> Ingredients</h2>
             <ul class="ingredients">
@@ -47,7 +44,6 @@
                 {% endfor %}
             </ul>
         </div>
-        <!-- method -->
         <div class="col s12 l7">
             <h2><i class="fa-solid fa-list-ol"></i> Method</h2>
             <ol class="method">
@@ -91,14 +87,12 @@
                 </a>
             </div>
             <div class="col s6 m4">
-                <!-- Delete Recipe Modal Trigger -->
                 <a href="#viewRecipeDelete{{ recipe._id }}" class="waves-effect waves-light btn red modal-trigger">
                     Delete
                     <i class="fa-solid fa-trash-can"></i>
                 </a>
             </div>
         {% endif %}
-        <!-- Delete Recipe Modal -->
         <div id="viewRecipeDelete{{ recipe._id }}" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4 class="center-align">Warning!</h4>
@@ -127,4 +121,5 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
