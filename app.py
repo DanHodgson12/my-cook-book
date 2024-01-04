@@ -187,8 +187,6 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     meal_types = mongo.db.meal_types.find()
     recipe_creator = recipe.get("created_by")
-    print(recipe_creator)
-    print(session["user"])
 
     if recipe_creator == session["user"]:
         return render_template(
