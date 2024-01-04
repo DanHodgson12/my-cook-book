@@ -613,9 +613,6 @@ Forget Recipe | Successful | ![Flash 10](static/images/flash-recipe-forget.png)
 - [CI Python Linter](https://pep8ci.herokuapp.com/)
   - The CI Python Linter was used to validate the Python.
 
-- [Favicon.io](https://favicon.io/)
-  - Favicon.io was used to create the site favicon.
-
 # Testing
 
 A large amount of testing was undertaken throughout the project in order to assess if the application was working as expected.
