@@ -873,13 +873,14 @@ To clone the repository:
 ## Media
 
 - [Font Awesome](https://fontawesome.com/icons) was used for providing the icons used in the application.
+- The image of the Chef's Hat was purchased from [ETSY](https://www.etsy.com/uk/listing/1563894337/chefs-hat-svg-png-file-graphic-cooking?gpla=1&gao=1&&utm_source=google&utm_medium=cpc&utm_campaign=shopping_uk_en_gb_e-art_and_collectibles-drawing_and_illustration-digital&utm_custom1=_k_Cj0KCQiA1rSsBhDHARIsANB4EJZavOoGwGp9_INRo6AR92mSsBYWsGsDj3bamCF_EX-DcKUGgED-qWwaAkasEALw_wcB_k_&utm_content=go_12603390431_119978861716_508715160702_aud-2079782229334:pla-383328011684_c__1563894337engb_5302852889&utm_custom2=12603390431&gad_source=1&gclid=Cj0KCQiA1rSsBhDHARIsANB4EJZavOoGwGp9_INRo6AR92mSsBYWsGsDj3bamCF_EX-DcKUGgED-qWwaAkasEALw_wcB) by the developer.
 - All other styling and media was created by the developer.
 
 ## Code
 
 - [Materialize](https://materializecss.com/getting-started.html) was used throughout to help with responsiveness and styling purposes.
 - [W3Schools](https://www.w3schools.com/) & [Stack Overflow](https://stackoverflow.co/teams/) were consulted on a regular basis to help overcome roadblocks in the developer's coding knowledge.
-- A user's contribution to [CodePen](https://codepen.io/j_holtslander/pen/vMZGxM) was used as inspiration for the rotating caret animation for the collapsible elements on the Recipes and Profile pages.
+- A developer's contribution to [CodePen](https://codepen.io/j_holtslander/pen/vMZGxM) was used as inspiration for the rotating caret animation for the collapsible elements on the Recipes and Profile pages.
 
 # Acknowledgements
 
