@@ -36,7 +36,7 @@ Visit the deployed site [here](https://my-cook-book-dh-6fcf65fd1fe5.herokuapp.co
 - As a user, I want to know what the application is about, so that I can understand the concept behind it.
 - As a user, I want to see the application's instructions, so that I can understand how to use it.
 - As a user, I want to be able to interact with the application, so that I can have a enjoyable experience.
-- As a user, I want to be given feedback when I interact with the application, so I know when an action I perform has been registered.!!!
+- As a user, I want to be given feedback when I interact with the application, so I know when an action I perform has been registered.
 - As a user, I want to be able to create my own profile, so I can begin using the application to its fullest.
 - As a user, I want to be able to add my own recipes, so I can share my knowledge with others.
 - As a user, I want to be able to access a wide range of recipes, so that I can find something that I like.
