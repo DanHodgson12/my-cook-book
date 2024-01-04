@@ -305,6 +305,20 @@ Collapsibles in 'My CookBook' tab rendered identically to those on Recipes page 
 
 ---
 
+### Fixed Bugs
+
+#### Edit Recipe
+
+One bug that became apparent during the testing phase is that a user's created recipe could be edited by another user if they somehow got a hold of the Edit Recipe URL. For example, a foreign user could enter the URL and access the Edit Recipe form, changed the information then submit the form. The recipe would then change owners to the foreign user.
+
+To combat this, some defensive programming was introduced to the 'edit_recipe' function.
+
+- The `created_by` field in the recipe object is checked
+- The `session["user"]` is checked
+- If they match, the Edit Recipe page is rendered
+- If they don't match, user is redirected to Recipes page and error message is flashed
+- ![Fixed Bug - Edit Recipe](static/images/fix-bug-edit-recipe.png)
+
 ### Known Bugs
 
 There are no known bugs with the web application.
